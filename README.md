@@ -22,7 +22,7 @@ The libft project is split into 4 parts:
 3.  **Bonus Functions:** Functions for linked lists manipulation.
 4.  **Extra/Personal Functions:** Functions I decided to include.
 
-## LIBC Functions:
+### LIBC Functions:
 
 | Function Name | Prototype     | Utility  |
 | ------------- |---------------| -------- |
@@ -55,9 +55,10 @@ The libft project is split into 4 parts:
 | ft_toupper    | int ft_toupper(int c) | man toupper |
 | ft_tolower    | int ft_tolower(int c) | man tolower |
 
-## Additional Functions
+### Additional Functions
 
 | Function Name | Prototype     | Utility  |
+| ------------- |---------------| ---------|
 | ft_memalloc   | void \*ft_memalloc(size_t size) | Replicates malloc + bzero |
 | ft_memdel     | void ft_memdel(void \*\*ap)     | Frees memory and puts the pointer to NULL |
 | ft_strnew     | char \*ft_strnew(size_t size)   | Returns a 'fresh' null-terminated string with zeroed characters|
@@ -84,7 +85,7 @@ The libft project is split into 4 parts:
 | ft_putnbr_fd  | void ft_putnbr_fd(int n, int fd) |Writes a character to the file descriptor|
 
 
-## Bonus Functions
+### Bonus Functions
 
 The following functions are for list manipulation. To use them properly, you must use the following structure to represent linked lists:
 
@@ -106,8 +107,47 @@ typedef struct  s_list
 | ft_lstiter    | void ft_lstiter(t_list \*lst, void (\*f)(t_list \*elem)) |Iterates a list and applies f() to each node|
 | ft_lstmap     | t_list \*ft_lstmap(t_list \*lst, t_list \*(\*f)(t_list \*elem)) |Iterates a list and applies f() to each node to create a new list|
 
-## Extra functions
+### Extra functions
+
+| Function Name | Prototype     | Utility  |
+| ------------- |---------------| ---------|
+| ft_countwords | int		ft_countwords(char const \*s, char c) | Return the number of words in a string|
+| ft_free_map   | void	ft_free_map(char \*\*map) | Frees a 2D str array |
+| ft_free_rows  | void	ft_free_rows(void \*\*d_arr, int rows) | Frees any 2d array where the 'rows' are known
+| ft_is_sort    | int		ft_is_sort(int \*tab, int length, int (\*f)(int, int)) | Return 1 if an int array is sorted according to f()| 
+| ft_range      | int		\*ft_range(int min, int max) | Returns a fresh int array with values ranging from 'min' to 'max'|
+| ft_swap       | void	ft_swap(void \*a, void \*b, size_t s) | Swap the values of 'a' and 'b'|
+| ft_strrev     | char	\*ft_strrev(char \*str) | Returns a reversed string
 
 Notes:
 
 - The term 'fresh' means that there was space allocated in memory.
+
+### How do I use this library?
+
+Run the following commands:
+
+    git clone https://github.com/Matt-Hurd/42-libft
+	  cd libft
+	  make
+    
+After the compilation is finished, a file called *libft.a* (which is the library) will be generated. Objects files will be generated too. To delete them, you can run the command:
+
+    make clean
+
+That's it. Now you can compile files using the library like this:
+
+`gcc -L. -lft -o filename filename.c`
+
+-L -> Takes the path to your library (curently '.', which means the current directory) 
+-l -> Takes the name of your library. You only have to write those after lib. i.e. libft --> -lft
+
+And then you can run your executable "filename" like this:
+
+`./filename`
+
+### Final words
+
+This README was inspired from [Matt-Hurd].
+
+[Matt-Hurd]: https://github.com/Matt-Hurd/42-libft
