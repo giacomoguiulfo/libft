@@ -119,9 +119,10 @@ typedef struct  s_list
 | ft_swap       | void	ft_swap(void \*a, void \*b, size_t s) | Swap the values of 'a' and 'b'|
 | ft_strrev     | char	\*ft_strrev(char \*str) | Returns a reversed string
 
-Note:
+Notes:
 
 - The term 'fresh' means that there was space allocated in memory.
+- More detailed information about the functions can be found in this [PDF] or by checking the 'man'.
 
 ### How do I use this library?
 
@@ -133,7 +134,7 @@ Run the following commands:
     
 After the compilation is finished, a file called *libft.a* (which is the library) will be generated. Objects files will be generated too. To delete them, you can run the command:
 
-    	make clean
+	make clean
 
 That's it. Now you can compile files using the library like this:
 
@@ -152,3 +153,4 @@ This README was inspired from [Matt-Hurd].
 
 [Matt-Hurd]: https://github.com/Matt-Hurd/42-libft
 [42 US]: http://42.us.org
+[PDF]: https://github.com/giacomoguiulfo/libft/blob/master/libft.en.pdf
