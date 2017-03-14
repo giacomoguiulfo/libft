@@ -1,5 +1,5 @@
 # libft
-## 42 - Project Nº1
+### 42 - Project Nº1
 
 A library of basic C functions (many of the standard library), which will be useful for the next 42 projects.
 
@@ -127,24 +127,24 @@ Notes:
 
 Run the following commands:
 
-    git clone https://github.com/Matt-Hurd/42-libft
-	  cd libft
-	  make
+	git clone https://github.com/Matt-Hurd/42-libft
+	cd libft
+	make
     
 After the compilation is finished, a file called *libft.a* (which is the library) will be generated. Objects files will be generated too. To delete them, you can run the command:
 
-    make clean
+    	make clean
 
 That's it. Now you can compile files using the library like this:
 
-`gcc -L. -lft -o filename filename.c`
+	gcc -L. -lft -o filename filename.c
 
 -L -> Takes the path to your library (curently '.', which means the current directory) 
 -l -> Takes the name of your library. You only have to write those after lib. i.e. libft --> -lft
 
 And then you can run your executable "filename" like this:
 
-`./filename`
+	./filename
 
 ### Final words
 
