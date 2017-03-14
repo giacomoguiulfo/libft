@@ -33,5 +33,7 @@ Here is a list of the functions:
 | ft_isprint    |
 | ft_toupper    |
 | ft_tolower    |
-| Part 2:                                    |
-| -----------------------------------------: |
+| ft_memalloc   | void * ft_memalloc(size_t size) |
+| ft_memdel     | void ft_memdel(void \*\*ap)     | |
+| ft_strnew     | char * ft_strnew(size_t size)   | |
+| ft_strdel     | void ft_strdel(char \*\*as)
