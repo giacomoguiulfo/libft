@@ -39,7 +39,7 @@ The libft project is split into 4 parts:
 | ft_strncpy    | char \*ft_strncpy(char \*dst, const char \*src, size_t len) | man strncpy |
 | ft_strcat     | char \*ft_strcat(char \*s1, const char \*s2) | man strcat |
 | ft_strncat    | char \*ft_strncat(char \*s1, const char \*s2, size_t n) | man strncat |
-| ft_strlcat    | size_t ft_strlcat(char \*dst, const char \*src, size_t size) man strlcat |
+| ft_strlcat    | size_t ft_strlcat(char \*dst, const char \*src, size_t size)| man strlcat |
 | ft_strchr     | char \*ft_strchr(const char \*s, int c) | man strchr |
 | ft_strrchr    | char \*ft_strrchr(const char \*s, int c) | man strrchar |
 | ft_strstr     | char \*ft_strstr(const char \*big, const char \*little) | man strstr |
@@ -74,7 +74,7 @@ The libft project is split into 4 parts:
 | ft_strjoin    | char \*ft_strjoin(char const \*s1, char const \*s2) |Returns a 'fresh' concatenated string|
 | ft_strtrim    | char \*ft_strtrim(char const \*s) |Returns a 'fresh' string without whitespaces at the beginning and at the end|
 | ft_strsplit   | char \*\*ft_strsplit(char const \*s, char c) |Returns a 'fresh' array of strings, made from the split of a string|
-| ft_itoa       | char \*ft_itoa(int n) |Returns a 'fresh' string made from an int value|
+| ft_itoa       | char \*ft_itoa(int n) |Returns a 'fresh' string that represents an int value|
 | ft_putchar    | void ft_putchar(char c) |Writes a character to stdout| 
 | ft_putstr     | void ft_putstr(char const \*s) |Writes a string to stdout|
 | ft_putendl    | void ft_putendl(char const \*s) |Writes a string followed by a newline to stdout|
@@ -103,7 +103,7 @@ typedef struct  s_list
 | ft_lstnew     | t_list \*ft_lstnew(void const \*content, size_t content_size) |Returns a 'fresh' link|
 | ft_lstdelone  | void ft_lstdelone(t_list \*\*alst, void (\*del)(void \*, size_t)) |Frees 1 link and sets its pointer to NULL|
 | ft_lstdel     | void ft_lstdel(t_list \*\*alst, void (\*del)(void \*, size_t)) |Frees 1 link and every successor of it|
-| ft_lstadd     | void ft_lstadd(t_list \*\*alst, t_list \*new) |Adds the element new to the beginning of the list|
+| ft_lstadd     | void ft_lstadd(t_list \*\*alst, t_list \*new) |Adds the element 'new' to the beginning of the list|
 | ft_lstiter    | void ft_lstiter(t_list \*lst, void (\*f)(t_list \*elem)) |Iterates a list and applies f() to each node|
 | ft_lstmap     | t_list \*ft_lstmap(t_list \*lst, t_list \*(\*f)(t_list \*elem)) |Iterates a list and applies f() to each node to create a new list|
 
@@ -119,7 +119,7 @@ typedef struct  s_list
 | ft_swap       | void	ft_swap(void \*a, void \*b, size_t s) | Swap the values of 'a' and 'b'|
 | ft_strrev     | char	\*ft_strrev(char \*str) | Returns a reversed string
 
-Notes:
+Note:
 
 - The term 'fresh' means that there was space allocated in memory.
 
@@ -127,7 +127,7 @@ Notes:
 
 Run the following commands:
 
-	git clone https://github.com/Matt-Hurd/42-libft
+	git clone https://github.com/giacomoguiulfo/libft
 	cd libft
 	make
     
@@ -139,8 +139,8 @@ That's it. Now you can compile files using the library like this:
 
 	gcc -L. -lft -o filename filename.c
 
--L -> Takes the path to your library (curently '.', which means the current directory) 
--l -> Takes the name of your library. You only have to write those after lib. i.e. libft --> -lft
+- L -> Takes the path to your library (curently '.', which means the current directory).
+- l -> Takes the name of your library. You only have to write those after lib. i.e. libft --> -lft
 
 And then you can run your executable "filename" like this:
 
