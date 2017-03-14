@@ -7,7 +7,7 @@ Here is a list of the functions:
 
 | Function Name | Prototype     | Utility  |
 | ------------- |---------------| --------:|
-| ft_memset     | void \*ft_memset(void \*b, int c, size_t len) | $1600 |
+| ft_memset     | ```void \*ft_memset(void \*b, int c, size_t len)``` | $1600 |
 | ft_bzero      | void ft_bzero(void \*s, size_t n)    |   $12 |
 | ft_memcpy     | void \*ft_memcpy(void \*dst, const void \*src, size_t n)
 | ft_memccpy    | void \*ft_memccpy(void \*dst, const void \*src, int c, size_t n)
