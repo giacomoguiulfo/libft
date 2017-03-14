@@ -3,10 +3,29 @@
 
 A library of basic C functions (many of the standard library), which will be useful for the next 42 projects.
 
-Here is a list of the functions:
+## Table of Contents
+- [What is libft?](#what-is-libft)
+- [LIBC Functions](#libc-functions)
+- [Additional Functions](#additional-functions)
+- [Bonus Functions](#bonus-functions)
+- [Extra Functions](#extra-functions)
+- [How do I use this library?](#how-do-i-use-this-library)
+
+### What is libft
+
+Libft is the first project at 42 - US. It consists in building a library of C functions based on what we learned during the piscine. The point of making this project is to deepen our knowledge on how things work at a very basic level. In other words, the goal is to know how basic functions work, and not just know what they do. 
+
+The libft project is split into 4 parts:
+
+1.  **Libc Functions:** Some of the C standard library functions.
+2.  **Additional functions:** Functions that are useful for 42 projects.
+3.  **Bonus Functions:** Functions for linked lists manipulation.
+4.  **Extra/Personal Functions:** Functions I decided to include.
+
+## LIBC Functions:
 
 | Function Name | Prototype     | Utility  |
-| ------------- |---------------| --------|
+| ------------- |---------------| -------- |
 | ft_memset     | void \*ft_memset(void \*b, int c, size_t len)| man memset. |
 | ft_bzero      | void ft_bzero(void \*s, size_t n)| man bzero |
 | ft_memcpy     | void \*ft_memcpy(void \*dst, const void \*src, size_t n) | man memcpy|
@@ -35,6 +54,10 @@ Here is a list of the functions:
 | ft_isprint    | int ft_isprint(int c) | man isprint |
 | ft_toupper    | int ft_toupper(int c) | man toupper |
 | ft_tolower    | int ft_tolower(int c) | man tolower |
+
+## Additional Functions
+
+| Function Name | Prototype     | Utility  |
 | ft_memalloc   | void \*ft_memalloc(size_t size) | Replicates malloc + bzero |
 | ft_memdel     | void ft_memdel(void \*\*ap)     | Frees memory and puts the pointer to NULL |
 | ft_strnew     | char \*ft_strnew(size_t size)   | Returns a 'fresh' null-terminated string with zeroed characters|
@@ -60,7 +83,8 @@ Here is a list of the functions:
 | ft_putendl_fd | void ft_putendl_fd(char const \*s, int fd) |Writes a string followed by a newline to the file descriptor|
 | ft_putnbr_fd  | void ft_putnbr_fd(int n, int fd) |Writes a character to the file descriptor|
 
-*\*The term 'fresh' means that there was space allocated in memory*.
+
+## Bonus Functions
 
 The following functions are for list manipulation. To use them properly, you must use the following structure to represent linked lists:
 
@@ -74,7 +98,7 @@ typedef struct  s_list
 ```
 
 | Function Name | Prototype     | Utility  |
-| ------------- |---------------| --------:|
+| ------------- |---------------| ---------|
 | ft_lstnew     | t_list \*ft_lstnew(void const \*content, size_t content_size) |Returns a 'fresh' link|
 | ft_lstdelone  | void ft_lstdelone(t_list \*\*alst, void (\*del)(void \*, size_t)) |Frees 1 link and sets its pointer to NULL|
 | ft_lstdel     | void ft_lstdel(t_list \*\*alst, void (\*del)(void \*, size_t)) |Frees 1 link and every successor of it|
@@ -82,3 +106,8 @@ typedef struct  s_list
 | ft_lstiter    | void ft_lstiter(t_list \*lst, void (\*f)(t_list \*elem)) |Iterates a list and applies f() to each node|
 | ft_lstmap     | t_list \*ft_lstmap(t_list \*lst, t_list \*(\*f)(t_list \*elem)) |Iterates a list and applies f() to each node to create a new list|
 
+## Extra functions
+
+Notes:
+
+- The term 'fresh' means that there was space allocated in memory.
