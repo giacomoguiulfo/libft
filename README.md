@@ -140,7 +140,7 @@ That's it. Now you can compile files using the library like this:
 	gcc -L. -lft -o filename filename.c
 
 - -L -> Takes the path to your library (curently '.', which means the current directory).
-- -l -> Takes the name of your library. You only have to write those after lib. i.e. libft --> -lft
+- -l -> Takes the name of your library. You only have to write the characters after lib. i.e. libft --> -lft
 
 And then you can run your executable "filename" like this:
 
