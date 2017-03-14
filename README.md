@@ -7,18 +7,18 @@ Here is a list of the functions:
 
 | Function Name | Prototype     | Utility  |
 | ------------- |---------------| --------:|
-| ft_memset     | right-aligned | $1600 |
-| ft_bzero      | centered      |   $12 |
-| ft_memcpy     | are neat      |    $1 |
-| ft_memccpy    | 
-| ft_memmove    |
-| ft_memchr     |
-| ft_memcmp     |
-| ft_strlen     |
-| ft_strdup     |
-| ft_strcpy     |
-| ft_strcat     |
-| ft_strncat    |
+| ft_memset     | *ft_memset(void *b, int c, size_t len) | $1600 |
+| ft_bzero      | ft_bzero(void *s, size_t n);      |   $12 |
+| ft_memcpy     | *ft_memcpy(void *dst, const void *src, size_t n);
+| ft_memccpy    | *ft_memccpy(void *dst, const void *src, int c, size_t n);
+| ft_memmove    | *ft_memmove(void *dst, const void *src, size_t len);
+| ft_memchr     | *ft_memchr(const void *s, int c, size_t n);
+| ft_memcmp     | ft_memcmp(const void *s1, const void *s2, size_t n);
+| ft_strlen     | ft_strlen(const char *s);
+| ft_strdup     | *ft_strdup(const char *s1);
+| ft_strcpy     | *ft_strcpy(char *dst, const char *src);
+| ft_strcat     | *ft_strncpy(char *dst, const char *src, size_t len);
+| ft_strncat    | *ft_strcat(char *s1, const char *s2);
 | ft_strlcat    |
 | ft_strchr     |
 | ft_strrchr    |
