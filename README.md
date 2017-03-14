@@ -13,7 +13,7 @@ A library of basic C functions (many of the standard library), which will be use
 
 ### What is libft
 
-Libft is the first project at [42 US]. It consists in building a library of C functions based on what we learned during the piscine. The point of making this project is to deepen our knowledge on how things work at a very basic level. In other words, the goal is to know how basic functions work, and not just know what they do. 
+Libft is the first project at [42 US]. It consists in building a library of C functions based on what we learned during the piscine. The point of making this project is to deepen our knowledge on how things work at a very basic level. In other words, the goal is to know how some important functions work, and not just know what they do. 
 
 The libft project is split into 4 parts:
 
