@@ -6,10 +6,10 @@ A library of basic C functions (many of the standard library), which will be use
 Here is a list of the functions:
 
 | Function Name | Prototype     | Utility  |
-| ------------- |---------------| --------:|
-| ft_memset     | void \*ft_memset(void \*b, int c, size_t len) | $1600 |
-| ft_bzero      | void ft_bzero(void \*s, size_t n)    |   $12 |
-| ft_memcpy     | void \*ft_memcpy(void \*dst, const void \*src, size_t n)
+| ------------- |---------------| --------|
+| ft_memset     | void \*ft_memset(void \*b, int c, size_t len) | Writes 'len' bytes of 'c' to the string 'b'.
+| ft_bzero      | void ft_bzero(void \*s, size_t n)    | The bzero() function writes n zeroed bytes to the string s.  If n is zero, bzero() does nothing. |
+| ft_memcpy     | void \*ft_memcpy(void \*dst, const void \*src, size_t n) | The memcpy() function copies n bytes from memory area src to memory area dst.  If dst and src overlap, behavior is undefined.  Applications in which dst and src might overlap should use memmove(3) instead. |
 | ft_memccpy    | void \*ft_memccpy(void \*dst, const void \*src, int c, size_t n)
 | ft_memmove    | void \*ft_memmove(void \*dst, const void \*src, size_t len)
 | ft_memchr     | void \*ft_memchr(const void \*s, int c, size_t n)
