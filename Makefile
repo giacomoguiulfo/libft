@@ -6,7 +6,7 @@
 #    By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/27 11:02:58 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/03/05 22:04:30 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/03/23 16:47:14 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,10 @@ SRCS =	ft_memset.c \
 		ft_is_sort.c \
 		ft_free_map.c \
 		ft_swap.c \
-		ft_free_rows.c
+		ft_free_rows.c \
+		ft_lstdelnode.c \
+		ft_printlst.c \
+		ft_strndup.c
 
 OBJS = $(SRCS:.c=.o)
 
