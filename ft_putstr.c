@@ -6,14 +6,15 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 17:45:34 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/03/02 18:03:30 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/03/23 16:35:34 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putstr(char const *s)
 {
-	while (*s)
-		ft_putchar(*s++);
+	if (s)
+		write(1, s, ft_strlen(s));
 }
