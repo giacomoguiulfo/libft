@@ -117,7 +117,11 @@ typedef struct  s_list
 | ft_is_sort    | int		ft_is_sort(int \*tab, int length, int (\*f)(int, int)) | Return 1 if an int array is sorted according to f()| 
 | ft_range      | int		\*ft_range(int min, int max) | Returns a fresh int array with values ranging from 'min' to 'max'|
 | ft_swap       | void	ft_swap(void \*a, void \*b, size_t s) | Swap the values of 'a' and 'b'|
-| ft_strrev     | char	\*ft_strrev(char \*str) | Returns a reversed string
+| ft_strrev     | char	\*ft_strrev(char \*str) | Returns a reversed string |
+| ft_strndup	| char	\*ft_strndup(const char \*src, size_t len) | man strndup |
+| ft_printlst	| void	ft_printlst(t_list \*\*head) | Prints all elements of a list of strings, each followed by '\n' |
+| ft_lstdelnode | void	ft_lstdelnode(t_list \*\*head, t_list \*node) | Deletes the given node from the list |
+
 
 Notes:
 
