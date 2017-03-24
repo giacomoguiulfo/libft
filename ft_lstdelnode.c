@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 15:15:38 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/03/23 15:16:42 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/03/23 17:20:20 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void	ft_lstdelnode(t_list **head, t_list *node)
 			return ;
 		temp->next = temp->next->next;
 	}
+	free(node->content);
 	free(node);
 }
