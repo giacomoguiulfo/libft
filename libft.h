@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/03/23 16:47:41 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/03/23 20:19:26 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ void				ft_free_rows(void **d_arr, int rows);
 void				ft_lstdelnode(t_list **head, t_list *node);
 void				ft_printlst(t_list **head);
 char				*ft_strndup(const char *src, size_t len);
+size_t				ft_findchr(const char *s, int c);
 
 #endif
