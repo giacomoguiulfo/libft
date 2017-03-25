@@ -6,17 +6,21 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/03/23 20:19:26 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/03/24 17:26:10 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdlib.h>
+# include <unistd.h>
 # include <string.h>
 
-# define ABS(a) (nb < 0) ? -nb : nb
+# define ABS(a) (val * ((val > 0) * 2 - 1))
 # define ARRLEN(a) (sizeof(a)/sizeof(a[0]))
+# define EVEN(n) (n % 2 == 0)
+# define ODD(n) (n % 2 == 1)
 # define ISSPACE(a) ((a >= 9 && a <= 13) || (a == 32))
 # define ISALPHA(a) (((unsigned)a | 32) - 97 < 26u)
 # define ISASCII(a) ((unsigned)a < 128u)
