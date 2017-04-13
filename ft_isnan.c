@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_findchr.c                                       :+:      :+:    :+:   */
+/*   ft_isnan.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 22:01:36 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/12 20:29:02 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/04/09 17:01:39 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/04/09 17:05:34 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t		ft_findchr(const char *s, int c)
+int		ft_isnan(double num)
 {
-	int				i;
-	unsigned char	a;
-
-	a = (unsigned char)c;
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == a)
-			return (i);
-		i++;
-	}
-	if (s[i] == a)
-		return (ft_strlen(s) + 1);
-	return (0);
+	return (num != num);
 }

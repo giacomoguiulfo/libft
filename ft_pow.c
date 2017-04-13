@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_findchr.c                                       :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 22:01:36 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/12 20:29:02 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/04/09 17:41:42 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/04/12 20:27:37 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t		ft_findchr(const char *s, int c)
+double	ft_pow(double x, int y)
 {
-	int				i;
-	unsigned char	a;
+	double temp;
 
-	a = (unsigned char)c;
-	i = 0;
-	while (s[i] != '\0')
+	if (y == 0)
+		return (1);
+	temp = ft_pow(x, y / 2);
+	if (y % 2 == 0)
+		return (temp * temp);
+	else
 	{
-		if (s[i] == a)
-			return (i);
-		i++;
+		if (y > 0)
+			return (x * temp * temp);
+		else
+			return ((temp * temp) / x);
 	}
-	if (s[i] == a)
-		return (ft_strlen(s) + 1);
-	return (0);
 }
