@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 21:39:12 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/16 00:12:54 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/04/16 21:29:22 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ typedef struct	s_cvector
 	char		*data;
 }				t_cvector;
 
-int		ft_cvector_init(t_cvector *vector, size_t init_cap);
-void	ft_cvector_append(t_cvector *vector, char *newdata);
-void	ft_cvector_resize(t_cvector *vector, size_t min);
-void	ft_cvector_nappend(t_cvector *vector, char *newdata, size_t n);
-void	ft_cvector_free(t_cvector *vector);
+int				ft_cvector_init(t_cvector *vector, size_t init_cap);
+void			ft_cvector_append(t_cvector *vector, char *newdata);
+void			ft_cvector_resize(t_cvector *vector, size_t min);
+void			ft_cvector_nappend(t_cvector *vector, char *newdata, size_t n);
+void			ft_cvector_free(t_cvector *vector);
 
 #endif
