@@ -1,4 +1,4 @@
-# libft
+# Libft
 ### 42 - Project #1
 
 A library of basic C functions (many of the standard library), which will be useful for the next 42 projects.
