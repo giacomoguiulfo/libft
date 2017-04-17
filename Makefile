@@ -19,7 +19,7 @@ FT_STRING	:=	ft_bzero ft_memccpy ft_memchr ft_memcmp ft_memcpy		\
 				ft_strcpy ft_strdup ft_strlcat ft_strlen ft_strncat		\
 				ft_strncmp ft_strncpy ft_strndup ft_strnstr ft_strrchr	\
 				ft_strstr
-FT_VECTOR	:=	ft_vector
+FT_VECTOR	:=	ft_cvector
 GNL			:=	get_next_line
 LST			:=	ft_lstadd ft_lstdelnode ft_lstdel ft_lstdelone ft_lstiter	\
 				ft_lstmap ft_lstnew ft_printlst
@@ -39,6 +39,8 @@ FILES		:=	$(addprefix chr/, $(CHR))				\
 				$(addprefix ft_printf/, $(FT_PRINTF))	\
 				$(addprefix ft_stdlib/, $(FT_STDLIB))	\
 				$(addprefix ft_string/, $(FT_STRING))	\
+				$(addprefix vector/, $(FT_VECTOR))	\
+				$(addprefix gnl/, $(GNL))				\
 				$(addprefix lst/, $(LST))				\
 				$(addprefix mem/, $(MEM))				\
 				$(addprefix nbr/, $(NBR))				\
