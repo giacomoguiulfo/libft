@@ -26,6 +26,6 @@ size_t		ft_findchr(const char *s, int c)
 		i++;
 	}
 	if (s[i] == a)
-		return (ft_strlen(s) + 1);
+		return (ft_strlen(s));
 	return (0);
 }
