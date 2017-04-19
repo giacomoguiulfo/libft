@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/03 16:34:08 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/16 00:12:10 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/04/18 21:07:08 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	ft_unicode_conv(wchar_t chr, char *str)
 {
-	if (chr < (1 << 7))
-		str[0] = (unsigned char)(chr);
+	if (chr < (MB_CUR_MAX == 1 ? 0xFF : 0x7F))
+		str[0] = (unsigned char)chr;
+	//if (chr < (1 << 7))
+	//	str[0] = (unsigned char)(chr);
 	else if (chr < (1 << 11))
 	{
 		str[0] = (unsigned char)((chr >> 6) | 0xC0);
