@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/25 01:33:21 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/25 03:36:59 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/04/25 05:37:09 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static inline int dnarr_resize(t_dnarr *array, size_t newsize)
 
 	if (newsize <= 0)
 		return (-1);
-	contents = ft_realloc(array->contents, array->max,
+	contents = ft_realloc(array->contents, array->max * sizeof(void *),
 							newsize * sizeof(void *));
 	array->max = newsize;
 	array->contents = contents;
