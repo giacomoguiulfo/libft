@@ -5,6 +5,7 @@ CFLAGS		+= -Wall -Wextra -Werror
 CFLAGS		+= -I includes
 
 CHR			:=	ft_putchar_fd ft_putchar
+DNARR		:=	dnarr_init
 FT_CTYPE	:=	ft_isalnum ft_isalpha ft_isascii	\
 				ft_isdigit ft_isprint ft_isspace	\
 				ft_tolower ft_toupper
@@ -33,6 +34,7 @@ STR			:=	ft_countwords ft_findchr ft_free_map ft_insrt_to_str 		\
 				ft_strsplit ft_strsub ft_strtrim
 
 FILES		:=	$(addprefix chr/, $(CHR))				\
+				$(addprefix dnarr/, $(DNARR))			\
 				$(addprefix ft_ctype/, $(FT_CTYPE))		\
 				$(addprefix ft_math/, $(FT_MATH))		\
 				$(addprefix ft_printf/, $(FT_PRINTF_H))	\

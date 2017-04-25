@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/16 00:12:13 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/04/25 02:53:11 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <string.h>
 
 # include "chr.h"
+# include "dnarr.h"
 # include "ft_ctype.h"
 # include "ft_math.h"
 # include "ft_printf.h"
@@ -39,6 +40,7 @@
 # define ODD(n) (n % 2 == 1)
 # define MAX(a, b) (((a) > (b)) ? (a) : (b))
 # define MIN(a, b) (((a) < (b)) ? (a) : (b))
+# define DIFF(a, b) ((a) < (b) ? -1 : (a) > (b))
 # define FAILED -1
 # define SUCCESS 0
 
