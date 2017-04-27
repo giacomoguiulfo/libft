@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/25 01:33:21 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/25 05:37:09 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/04/27 11:56:52 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_dnarr	*dnarr_create(size_t element_size, size_t initial_max)
 {
 	t_dnarr *array;
 
-	if ((array = (t_dnarr *)malloc(sizeof(t_dnarr))) == NULL)
+	if ((array = malloc(sizeof(t_dnarr))) == NULL)
 		return (NULL);
 	if ((array->max = initial_max) == 0)
 		return (NULL);
@@ -31,15 +31,17 @@ t_dnarr	*dnarr_create(size_t element_size, size_t initial_max)
 
 void	dnarr_clr(t_dnarr *array)
 {
-	size_t i;
+	int i;
 
 	i = 0;
 	if (array->element_size > 0)
 	{
-		while (i < (size_t)array->max)
+		while (i < array->end)
 		{
 			if (array->contents[i] != NULL)
+			{
 				free(array->contents[i]);
+			}
 			++i;
 		}
 	}
@@ -65,7 +67,8 @@ int	dnarr_expand(t_dnarr *array)
 	old_max = array->max;
 	if (dnarr_resize(array, array->max + array->expand_rate) != 0)
 		return (-1);
-	ft_bzero(array->contents + old_max, array->expand_rate + 1);
+	// ft_bzero(array->contents + old_max, array->expand_rate + 1);
+	ft_memset(array->contents + old_max, 0, array->expand_rate + 1);
 	return (0);
 }
 
