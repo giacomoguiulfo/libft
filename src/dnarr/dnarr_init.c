@@ -6,13 +6,13 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/25 01:33:21 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/27 11:56:52 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/05/03 01:04:13 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <dnarr.h>
 
-t_dnarr	*dnarr_create(size_t element_size, size_t initial_max)
+t_dnarr				*dnarr_create(size_t element_size, size_t initial_max)
 {
 	t_dnarr *array;
 
@@ -29,25 +29,7 @@ t_dnarr	*dnarr_create(size_t element_size, size_t initial_max)
 	return (array);
 }
 
-void	dnarr_clr(t_dnarr *array)
-{
-	int i;
-
-	i = 0;
-	if (array->element_size > 0)
-	{
-		while (i < array->end)
-		{
-			if (array->contents[i] != NULL)
-			{
-				free(array->contents[i]);
-			}
-			++i;
-		}
-	}
-}
-
-static inline int dnarr_resize(t_dnarr *array, size_t newsize)
+static inline int	dnarr_resize(t_dnarr *array, size_t newsize)
 {
 	void *contents;
 
@@ -60,19 +42,18 @@ static inline int dnarr_resize(t_dnarr *array, size_t newsize)
 	return (0);
 }
 
-int	dnarr_expand(t_dnarr *array)
+int					dnarr_expand(t_dnarr *array)
 {
 	size_t old_max;
 
 	old_max = array->max;
 	if (dnarr_resize(array, array->max + array->expand_rate) != 0)
 		return (-1);
-	// ft_bzero(array->contents + old_max, array->expand_rate + 1);
 	ft_memset(array->contents + old_max, 0, array->expand_rate + 1);
 	return (0);
 }
 
-int dnarr_contract(t_dnarr *array)
+int					dnarr_contract(t_dnarr *array)
 {
 	int new_size;
 
@@ -81,43 +62,9 @@ int dnarr_contract(t_dnarr *array)
 	return (dnarr_resize(array, new_size + 1));
 }
 
-void	dnarr_destroy(t_dnarr *array)
+void				*dnarr_new(t_dnarr *array)
 {
-	if (array)
-	{
-		if (array->contents)
-			free(array->contents);
-		free(array);
-	}
-}
-
-void	dnarr_clrdestroy(t_dnarr *array)
-{
-	dnarr_clr(array);
-	dnarr_destroy(array);
-}
-
-int		dnarr_push(t_dnarr *array, void *el)
-{
-	array->contents[array->end] = el;
-	array->end++;
-
-	if (dnarr_end(array) >= dnarr_max(array))
-		return (dnarr_expand(array));
-	else
-		return (0);
-}
-
-void	*dnarr_pop(t_dnarr *array)
-{
-	void	*el;
-
-	if (array->end - 1 >= 0)
+	if (!(array->element_size > 0))
 		return (NULL);
-	el = dnarr_remove(array, array->end - 1);
-	array->end--;
-	if (dnarr_end(array) > (int)array->expand_rate
-		&& dnarr_end(array) % array->expand_rate)
-		dnarr_contract(array);
-	return (el);
+	return (ft_memalloc(array->element_size));
 }

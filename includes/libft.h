@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/25 02:53:11 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/04/30 03:09:52 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include "ft_ctype.h"
 # include "ft_math.h"
 # include "ft_printf.h"
+# include "ft_sort.h"
 # include "ft_stdlib.h"
 # include "ft_string.h"
 # include "ft_vector.h"
@@ -34,7 +35,7 @@
 # include "nbr.h"
 # include "str.h"
 
-# define ABS(a) (val * ((val > 0) * 2 - 1))
+# define ABS(a) ((a) * (((a) > 0) * 2 - 1))
 # define ARRLEN(a) (sizeof(a)/sizeof(a[0]))
 # define EVEN(n) (n % 2 == 0)
 # define ODD(n) (n % 2 == 1)
