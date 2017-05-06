@@ -4,7 +4,7 @@ CC			:=	gcc
 CFLAGS		+= -Wall -Wextra -Werror
 CFLAGS		+= -I includes
 
-CHR			:=	ft_putchar_fd ft_putchar
+CHR			:=	ft_putchar_fd ft_putchar ft_getchar
 DNARR		:=	dnarr_init dnarr_kill dnarr_man
 FT_CTYPE	:=	ft_isalnum ft_isalpha ft_isascii	\
 				ft_isdigit ft_isprint ft_isspace	\
