@@ -26,8 +26,8 @@ GNL			:=	get_next_line
 LST			:=	ft_lstadd ft_lstdelnode ft_lstdel ft_lstdelone ft_lstiter	\
 				ft_lstmap ft_lstnew ft_printlst
 MEM			:=	ft_free_rows ft_memalloc ft_memdel ft_recalloc ft_swap
-NBR			:=	ft_imaxtoa ft_is_sort ft_itoa_base ft_itoa ft_nblen \
-				ft_putnbr_fd ft_putnbr ft_range ft_uimaxtoa_base
+NBR			:=	ft_atoi_base ft_imaxtoa ft_is_sort ft_itoa_base ft_itoa \
+				ft_nblen ft_putnbr_fd ft_putnbr ft_range ft_uimaxtoa_base
 STR			:=	ft_countwords ft_findchr ft_free_map ft_insrt_to_str 		\
 				ft_putendl_fd ft_putendl ft_putstr_fd ft_putstr ft_strclr	\
 				ft_strdel ft_strequ ft_striter ft_striteri ft_strjoin		\
