@@ -8,7 +8,7 @@ CHR			:=	ft_putchar_fd ft_putchar ft_getchar
 DNARR		:=	dnarr_init dnarr_kill dnarr_man
 FT_CTYPE	:=	ft_isalnum ft_isalpha ft_isascii	\
 				ft_isdigit ft_isprint ft_isspace	\
-				ft_islower ft_isupper ft_tolower ft_toupper 
+				ft_islower ft_isupper ft_tolower ft_toupper
 FT_MATH		:=	ft_isinf ft_isnan ft_pow
 FT_PRINTF_H :=	ft_pf_chr_conv ft_pf_float_conv ft_pf_fmt_parse \
 				ft_pf_handle_spec ft_pf_num_conv ft_pf_bonus ft_pf_handlers \
@@ -62,14 +62,14 @@ $(OBJ): %.o: %.c
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	@echo "\033[32mCompiled Library\033[0m"
+	@printf "\e[32mCompiled Library\e[0m\n"
 
 clean:
 	@rm -f $(OBJ)
-	@echo "\033[32mRemoved Object Files\033[0m"
+	@printf "\e[32mRemoved Object Files\e[0m\n"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\033[32mRemoved Library\033[0m"
+	@printf "\e[32mRemoved Library\e[0m\n"
 
 re: fclean all
