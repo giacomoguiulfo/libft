@@ -6,11 +6,11 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/05 18:43:25 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:13:34 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/05/31 01:29:42 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_sort(int *tab, int length, int (*f)(int, int))
+int		ft_is_sort(int *array, int length, int (*f)(int, int))
 {
 	int i;
 
@@ -19,7 +19,7 @@ int		ft_is_sort(int *tab, int length, int (*f)(int, int))
 		return (1);
 	while (i < length - 1)
 	{
-		if (f(tab[i], tab[i + 1]) <= 0)
+		if (f(array[i], array[i + 1]) <= 0)
 			i++;
 		else
 			break ;

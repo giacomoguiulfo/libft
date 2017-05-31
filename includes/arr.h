@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   arr.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/04 22:09:33 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/05/27 08:19:56 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/05/29 17:53:51 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/05/29 17:54:13 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#ifndef ARR_H
+# define ARR_H
 
-void	ft_lstadd(t_list **alst, t_list *new)
-{
-	new->next = (*alst);
-	*alst = new;
-}
+void	ft_arr_remove_nth(int nth, void *array, size_t size, int len);
+
+#endif

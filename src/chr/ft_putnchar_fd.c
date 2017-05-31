@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_putnchar_fd.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/04 22:09:33 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/05/27 08:19:56 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/05/29 17:26:13 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/05/29 17:27:21 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <unistd.h>
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_putnchar_fd(int c, int n, int fd)
 {
-	new->next = (*alst);
-	*alst = new;
+	while (n-- > 0)
+		write(fd, &c, 1);
 }

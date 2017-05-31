@@ -4,7 +4,8 @@ CC			:=	gcc
 CFLAGS		+= -Wall -Wextra -Werror
 CFLAGS		+= -I includes
 
-CHR			:=	ft_putchar_fd ft_putchar ft_getchar
+ARR			:=	ft_arr_remove_nth
+CHR			:=	ft_putnchar_fd ft_putchar_fd ft_putchar ft_getchar
 DNARR		:=	dnarr_init dnarr_kill dnarr_man
 FT_CTYPE	:=	ft_isalnum ft_isalpha ft_isascii	\
 				ft_isdigit ft_isprint ft_isspace	\
@@ -21,6 +22,8 @@ FT_STRING	:=	ft_bzero ft_memccpy ft_memchr ft_memcmp ft_memcpy		\
 				ft_strcpy ft_strdup ft_strlcat ft_strlen ft_strncat		\
 				ft_strncmp ft_strncpy ft_strndup ft_strnstr ft_strrchr	\
 				ft_strstr
+FT_TERM		:=	ft_clrscreen ft_cursor_goto ft_get_win_size ft_highlight \
+				ft_termcmd ft_underline
 FT_VECTOR	:=	ft_cvector
 GNL			:=	get_next_line
 LST			:=	ft_lstadd ft_lstdelnode ft_lstdel ft_lstdelone ft_lstiter	\
@@ -34,16 +37,18 @@ STR			:=	ft_countwords ft_findchr ft_free_map ft_insrt_to_str 		\
 				ft_strmap ft_strmapi ft_strnequ ft_strnew ft_strrev			\
 				ft_strsplit ft_strsub ft_strtrim
 
-FILES		:=	$(addprefix chr/, $(CHR))				\
+FILES		:=	$(addprefix arr/, $(ARR))				\
+				$(addprefix chr/, $(CHR))				\
 				$(addprefix dnarr/, $(DNARR))			\
 				$(addprefix ft_ctype/, $(FT_CTYPE))		\
 				$(addprefix ft_math/, $(FT_MATH))		\
 				$(addprefix ft_printf/, $(FT_PRINTF_H))	\
 				$(addprefix ft_printf/, $(FT_PRINTF))	\
-				$(addprefix sort/, $(FT_SORT))		\
+				$(addprefix sort/, $(FT_SORT))			\
 				$(addprefix ft_stdlib/, $(FT_STDLIB))	\
 				$(addprefix ft_string/, $(FT_STRING))	\
-				$(addprefix vector/, $(FT_VECTOR))	\
+				$(addprefix ft_term/, $(FT_TERM))		\
+				$(addprefix vector/, $(FT_VECTOR))		\
 				$(addprefix gnl/, $(GNL))				\
 				$(addprefix lst/, $(LST))				\
 				$(addprefix mem/, $(MEM))				\

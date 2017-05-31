@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 20:12:38 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/05/08 12:02:40 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/05/31 01:29:50 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int			ft_atoi_base(char *str, int base);
 char		*ft_imaxtoa(intmax_t value);
-int			ft_is_sort(int *tab, int length, int (*f)(int, int));
+int			ft_is_sort(int *array, int length, int (*f)(int, int));
 char		*ft_itoa_base(int value, int base);
 char		*ft_itoa(int n);
 long long	ft_nblen(long long nb);
