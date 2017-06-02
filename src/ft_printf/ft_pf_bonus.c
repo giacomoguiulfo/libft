@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 05:47:57 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/16 00:12:12 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/01 17:25:23 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ bool		ft_pfcolors(t_cvector *vector, const char **format)
 	i = 0;
 	while (i < 33)
 	{
-		if (ft_strnstr(*format, g_colors[i][0], ft_strlen(g_colors[i][0])) != 0)
+		if (ft_strncmp(*format, g_colors[i][0], ft_strlen(g_colors[i][0])) == 0)
 		{
 			ft_cvector_append(vector, g_colors[i][1]);
 			*format = *format + ft_strlen(g_colors[i][0]);
