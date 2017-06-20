@@ -6,11 +6,16 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 14:35:43 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 19:59:25 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 11:13:24 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <string.h>
+
+/*
+** Description:
+** Equivalent to libc's memmove() function, man memmove(3).
+*/
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

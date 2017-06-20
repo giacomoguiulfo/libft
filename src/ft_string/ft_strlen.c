@@ -6,11 +6,16 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:17:47 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:04:57 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 11:18:20 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <string.h>
+
+/*
+** Description:
+** Equivalent to libc's strlen() function, man strlen(3).
+*/
 
 size_t	ft_strlen(const char *s)
 {

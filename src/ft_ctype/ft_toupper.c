@@ -3,12 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 15:47:16 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/02/28 15:53:43 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 10:41:35 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Description:
+** Equivalent to libc's toupper() function, man toupper(3).
+*/
 
 int		ft_toupper(int c)
 {

@@ -6,11 +6,16 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 18:01:51 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:05:30 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 11:18:49 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <string.h>
+
+/*
+** Description:
+** Equivalent to libc's strncat() function, man strncat(3).
+*/
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {

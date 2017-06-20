@@ -6,13 +6,18 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 17:43:52 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:51:05 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 10:42:24 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <unistd.h>
 
-void	ft_putchar(char c)
+/*
+** Description:
+** This function is equivalent to libc's putchar() function, man putchar(3).
+*/
+
+int	ft_putchar(int c)
 {
-	write(1, &c, 1);
+	return (write(STDIN_FILENO, &c, 1));
 }

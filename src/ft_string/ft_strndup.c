@@ -6,11 +6,16 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 14:17:24 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:06:35 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 11:20:27 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+
+/*
+** Description:
+** Equivalent to libc's strndup() function, man strndup(3).
+*/
 
 char	*ft_strndup(const char *src, size_t len)
 {

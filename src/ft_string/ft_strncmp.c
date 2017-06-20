@@ -6,11 +6,16 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:12:51 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:06:05 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 11:19:19 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <string.h>
+
+/*
+** Description:
+** Equivalent to libc's strncmp() function, man strncmp(3).
+*/
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {

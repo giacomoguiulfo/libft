@@ -6,9 +6,14 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/09 17:41:42 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/12 20:27:37 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 10:46:55 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Description:
+** Simplier version of libm's pow() function, man pow(3).
+*/
 
 double	ft_pow(double x, int y)
 {
