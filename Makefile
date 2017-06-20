@@ -55,26 +55,42 @@ FILES		:=	$(addprefix arr/, $(ARR))				\
 				$(addprefix nbr/, $(NBR))				\
 				$(addprefix str/, $(STR))				\
 
-SRC			:=	$(addprefix src/, $(addsuffix .c, $(FILES)))
-OBJ			:=	$(SRC:.c=.o)
+OBJDIR	:= obj/
+SRCDIR	:= src/
 
-.PHONY = all clean fclean re
+SRC			:=	$(addprefix $(SRCDIR)/, $(addsuffix .c, $(FILES)))
+OBJ			:=	$(patsubst $(SRCDIR)/%, $(OBJDIR)/%, $(SRC:.c=.o))
 
-all: $(NAME)
+MAX			:=	$(words $(OBJ))
+n			:=	x
+increment	=	$1 x
+COUNTER		=	$(words $n)$(eval n := $(call increment,$n))
 
-$(OBJ): %.o: %.c
-	@$(CC) -c $(CFLAGS) $< -o $@
+.PHONY = all obj clean fclean re
+
+all: obj $(NAME)
+
+obj:
+	@mkdir -p $(OBJDIR)
 
 $(NAME): $(OBJ)
+	@printf "\r\e[32mCompiling...(%d/%d)[DONE]\n\e[0m" $(MAX) $(MAX)
+	@printf "\e[32mLinking and indexing...\e[0m"
 	@ar rcs $(NAME) $(OBJ)
-	@printf "\e[32mCompiled Library\e[0m\n"
+	@printf "\e[32m[DONE]\e[0m\n"
+	@printf "\e[32mCompiled library: libft\e[0m\n"
+
+$(OBJDIR)%.o: $(SRCDIR)%.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -o $@ -c $<
+	@printf "\r\e[32mCompiling...(%d/%d)\e[0m" $(COUNTER) $(MAX)
 
 clean:
-	@rm -f $(OBJ)
-	@printf "\e[32mRemoved Object Files\e[0m\n"
+	@rm -rf $(OBJDIR)
+	@printf "\e[32mRemoved object files\e[0m\n"
 
 fclean: clean
 	@rm -f $(NAME)
-	@printf "\e[32mRemoved Library\e[0m\n"
+	@printf "\e[32mRemoved library: libft\e[0m\n"
 
 re: fclean all
