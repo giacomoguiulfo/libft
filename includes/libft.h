@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/07 16:41:35 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 11:38:49 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@
 # define MAX(a, b) (((a) > (b)) ? (a) : (b))
 # define MIN(a, b) (((a) < (b)) ? (a) : (b))
 # define DIFF(a, b) ((a) < (b) ? -1 : (a) > (b))
-# define FAILED -1
-# define SUCCESS 0
+# define FAILED (-1)
+# define SUCCESS (0)
 # define SQUARE(a) ((a) * (a))
 
 # define ASC_BRED	"\033[31;1m"
