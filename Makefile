@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/23 05:50:34 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/06/23 05:50:47 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/06/23 05:53:47 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ SRCS =	ft_memset.c \
 		ft_lstdelnode.c \
 		ft_printlst.c \
 		ft_strndup.c \
-		ft_lstfind.c
+		ft_lstfind.c \
 		ft_findchr.c
 
 OBJS = $(SRCS:.c=.o)
