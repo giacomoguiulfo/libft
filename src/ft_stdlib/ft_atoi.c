@@ -6,11 +6,16 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:06:41 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 19:48:27 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 10:50:23 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+
+/*
+** Description:
+** Equivalent to libc's atoi() function, man atoi(3).
+*/
 
 int		ft_atoi(const char *str)
 {

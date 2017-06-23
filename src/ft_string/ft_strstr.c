@@ -6,9 +6,14 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:09:49 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:07:35 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 11:22:08 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Description:
+** Equivalent to libc's strstr() function, man strstr(3).
+*/
 
 char	*ft_strstr(const char *big, const char *little)
 {

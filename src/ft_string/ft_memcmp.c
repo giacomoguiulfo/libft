@@ -6,11 +6,16 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 16:09:55 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 19:58:12 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 11:11:44 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <string.h>
+
+/*
+** Description:
+** Equivalent to libc's memcmp() function, man memcmp(3).
+*/
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {

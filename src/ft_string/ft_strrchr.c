@@ -6,9 +6,14 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 16:33:05 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:07:23 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 11:21:09 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Description:
+** Equivalent to libc's strchr() function, man strchr(3).
+*/
 
 char	*ft_strrchr(const char *s, int c)
 {

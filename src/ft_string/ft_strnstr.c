@@ -6,11 +6,16 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 15:44:22 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:06:53 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 11:21:54 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+
+/*
+** Description:
+** Equivalent to libc's strnstr() function, man strnstr(3).
+*/
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

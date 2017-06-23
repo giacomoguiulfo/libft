@@ -6,9 +6,14 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/09 17:05:42 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/09 17:10:08 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 10:44:27 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Description:
+** Equivalent to libm's isinf() function, man isinf(3).
+*/
 
 int		ft_isinf(double num)
 {

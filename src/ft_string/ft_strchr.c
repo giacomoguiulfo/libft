@@ -6,11 +6,16 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 16:26:37 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:00:58 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 11:15:09 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <string.h>
+
+/*
+** Description:
+** Equivalent to libc's strchr() function, man strchr(3).
+*/
 
 char	*ft_strchr(const char *s, int c)
 {

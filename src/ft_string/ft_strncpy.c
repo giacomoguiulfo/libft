@@ -6,11 +6,16 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:09:13 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:06:17 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/20 11:20:01 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <string.h>
+
+/*
+** Description:
+** Equivalent to libc's strncpy() function, man strncpy(3).
+*/
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
