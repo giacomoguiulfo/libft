@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/03/23 16:47:41 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/23 04:01:00 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,10 @@ int					*ft_range(int min, int max);
 int					ft_is_sort(int *tab, int length, int (*f)(int, int));
 void				ft_free_map(char **map);
 void				ft_free_rows(void **d_arr, int rows);
-void				ft_lstdelnode(t_list **head, t_list *node);
+void				ft_lstdelnode(t_list **head, t_list *node,
+													void (*del)(void*, size_t));
 void				ft_printlst(t_list **head);
 char				*ft_strndup(const char *src, size_t len);
+t_list				*ft_lstfind(t_list *begin_list, void *data, int (*cmp)());
 
 #endif

@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelnode.c                                    :+:      :+:    :+:   */
+/*   ft_lstfind.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 15:15:38 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/23 03:50:55 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/06/23 04:00:07 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/06/23 04:00:28 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	ft_lstdelnode(t_list **head, t_list *node, void (*del)(void*, size_t))
+t_list			*ft_lstfind(t_list *begin_list, void *data, int (*cmp)())
 {
-	t_list *temp;
+	t_list *node;
 
-	if (!node)
-		return ;
-	if (*head == node)
-		*head = (*head)->next;
-	else
+	node = begin_list;
+	while (node)
 	{
-		temp = *head;
-		while (temp->next != 0 && temp->next != node)
-			temp = temp->next;
-		if (temp->next == 0)
-			return ;
-		temp->next = temp->next->next;
+		if ((cmp)(node->content, data) == 0)
+			return (node);
+		node = node->next;
 	}
-	ft_lstdelone(&node, del);
+	return (NULL);
 }

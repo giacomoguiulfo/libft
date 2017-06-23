@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/27 11:02:58 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/03/23 16:47:14 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/06/23 04:07:19 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,8 @@ SRCS =	ft_memset.c \
 		ft_free_rows.c \
 		ft_lstdelnode.c \
 		ft_printlst.c \
-		ft_strndup.c
+		ft_strndup.c \
+		ft_lstfind.c
 
 OBJS = $(SRCS:.c=.o)
 
