@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 21:44:34 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/01 17:22:21 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/23 02:11:43 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ int				get_next_line(const int fd, char **line)
 	else if (ft_strlen(temp->content) > 0)
 		return (ft_lastline(&temp, line));
 	ft_lstdelnode(&node, temp);
+	*line = NULL;
 	return (0);
 }
