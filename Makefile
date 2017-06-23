@@ -26,8 +26,8 @@ FT_TERM		:=	ft_clrscreen ft_cursor_goto ft_get_win_size ft_highlight \
 				ft_termcmd ft_underline
 FT_VECTOR	:=	ft_cvector
 GNL			:=	get_next_line
-LST			:=	ft_lstadd ft_lstdelnode ft_lstdel ft_lstdelone ft_lstiter	\
-				ft_lstmap ft_lstnew ft_printlst
+LST			:=	ft_lstadd ft_lstdelnode ft_lstdel ft_lstdelone ft_lstfind \
+				ft_lstiter ft_lstmap ft_lstnew ft_printlst
 MEM			:=	ft_free_rows ft_memalloc ft_memdel ft_recalloc ft_swap
 NBR			:=	ft_atoi_base ft_imaxtoa ft_is_sort ft_itoa_base ft_itoa \
 				ft_nblen ft_putnbr_fd ft_putnbr ft_range ft_uimaxtoa_base
