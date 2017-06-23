@@ -5,18 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2017/06/23 04:01:00 by gguiulfo         ###   ########.fr       */
-=======
-/*   Updated: 2017/03/24 17:26:10 by gguiulfo         ###   ########.fr       */
->>>>>>> 440ed5b9b826a972cc54dcaf294400d14e4e0290
+/*   Created: 2017/06/23 05:49:10 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/06/23 05:50:24 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
@@ -111,10 +106,7 @@ void				ft_lstdelnode(t_list **head, t_list *node,
 													void (*del)(void*, size_t));
 void				ft_printlst(t_list **head);
 char				*ft_strndup(const char *src, size_t len);
-<<<<<<< HEAD
 t_list				*ft_lstfind(t_list *begin_list, void *data, int (*cmp)());
-=======
 size_t				ft_findchr(const char *s, int c);
->>>>>>> 440ed5b9b826a972cc54dcaf294400d14e4e0290
 
 #endif
