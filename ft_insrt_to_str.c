@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelnode.c                                    :+:      :+:    :+:   */
+/*   ft_insrt_to_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 15:15:38 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/23 03:50:55 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/04/05 23:34:53 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/04/06 16:44:35 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-void	ft_lstdelnode(t_list **head, t_list *node, void (*del)(void*, size_t))
+void	ft_insrt_to_str(char **s1, char *s2)
 {
-	t_list *temp;
+	char *str;
+	char *s1cpy;
+	char *new;
 
-	if (!node)
+	if (!s1 || !s2)
 		return ;
-	if (*head == node)
-		*head = (*head)->next;
-	else
-	{
-		temp = *head;
-		while (temp->next != 0 && temp->next != node)
-			temp = temp->next;
-		if (temp->next == 0)
-			return ;
-		temp->next = temp->next->next;
-	}
-	ft_lstdelone(&node, del);
+	new = ft_strnew(ft_strlen(*s1) + ft_strlen(s2) + 1);
+	str = new;
+	s1cpy = *s1;
+	while (*s2)
+		*str++ = *s2++;
+	while (*s1cpy)
+		*str++ = *s1cpy++;
+	*str = '\0';
+	free(*s1);
+	*s1 = new;
 }

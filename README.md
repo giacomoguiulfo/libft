@@ -1,4 +1,4 @@
-# libft
+# Libft
 ### 42 - Project #1
 
 A library of basic C functions (many of the standard library), which will be useful for the next 42 projects.
@@ -121,6 +121,7 @@ typedef struct  s_list
 | ft_strndup	| char	\*ft_strndup(const char \*src, size_t len) | man strndup |
 | ft_printlst	| void	ft_printlst(t_list \*\*head) | Prints all elements of a list of strings, each followed by '\n' |
 | ft_lstdelnode | void	ft_lstdelnode(t_list \*\*head, t_list \*node) | Deletes the given node from the list |
+| ft_findchr	| size_t ft_findchr(const char \*s, int c) | Returns the position of the first occurance of a charater in a string |
 
 
 Notes:

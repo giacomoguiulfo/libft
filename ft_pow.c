@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_map.c                                      :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/12 18:59:54 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/03/12 19:00:55 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/04/09 17:41:42 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/04/12 20:27:37 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_free_map(char **map)
+double	ft_pow(double x, int y)
 {
-	size_t i;
+	double temp;
 
-	i = 0;
-	while (map[i])
+	if (y == 0)
+		return (1);
+	temp = ft_pow(x, y / 2);
+	if (y % 2 == 0)
+		return (temp * temp);
+	else
 	{
-		free(map[i]);
-		i++;
+		if (y > 0)
+			return (x * temp * temp);
+		else
+			return ((temp * temp) / x);
 	}
-	free(map);
 }

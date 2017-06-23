@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelnode.c                                    :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 15:15:38 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/23 03:50:55 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/04/06 16:38:07 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/04/06 16:38:53 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelnode(t_list **head, t_list *node, void (*del)(void*, size_t))
+void	*ft_realloc(void *ptr, size_t src_size, size_t new_size)
 {
-	t_list *temp;
+	void *new_ptr;
 
-	if (!node)
-		return ;
-	if (*head == node)
-		*head = (*head)->next;
-	else
+	if (!new_size)
 	{
-		temp = *head;
-		while (temp->next != 0 && temp->next != node)
-			temp = temp->next;
-		if (temp->next == 0)
-			return ;
-		temp->next = temp->next->next;
+		if (ptr)
+			free(ptr);
+		return (ptr);
 	}
-	ft_lstdelone(&node, del);
+	if (!ptr)
+		return (malloc(new_size));
+	if (new_size <= src_size)
+		return (ptr);
+	new_ptr = malloc(new_size);
+	if (new_ptr)
+	{
+		ft_memcpy(new_ptr, ptr, src_size);
+		free(ptr);
+	}
+	return (new_ptr);
 }

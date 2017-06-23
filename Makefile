@@ -6,7 +6,11 @@
 #    By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/27 11:02:58 by gguiulfo          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2017/06/23 04:07:19 by gguiulfo         ###   ########.fr        #
+=======
+#    Updated: 2017/03/23 20:19:00 by gguiulfo         ###   ########.fr        #
+>>>>>>> 440ed5b9b826a972cc54dcaf294400d14e4e0290
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +84,11 @@ SRCS =	ft_memset.c \
 		ft_lstdelnode.c \
 		ft_printlst.c \
 		ft_strndup.c \
+<<<<<<< HEAD
 		ft_lstfind.c
+=======
+		ft_findchr.c
+>>>>>>> 440ed5b9b826a972cc54dcaf294400d14e4e0290
 
 OBJS = $(SRCS:.c=.o)
 

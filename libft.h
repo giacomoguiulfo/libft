@@ -6,17 +6,25 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2017/06/23 04:01:00 by gguiulfo         ###   ########.fr       */
+=======
+/*   Updated: 2017/03/24 17:26:10 by gguiulfo         ###   ########.fr       */
+>>>>>>> 440ed5b9b826a972cc54dcaf294400d14e4e0290
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdlib.h>
+# include <unistd.h>
 # include <string.h>
 
-# define ABS(a) (nb < 0) ? -nb : nb
+# define ABS(a) (val * ((val > 0) * 2 - 1))
 # define ARRLEN(a) (sizeof(a)/sizeof(a[0]))
+# define EVEN(n) (n % 2 == 0)
+# define ODD(n) (n % 2 == 1)
 # define ISSPACE(a) ((a >= 9 && a <= 13) || (a == 32))
 # define ISALPHA(a) (((unsigned)a | 32) - 97 < 26u)
 # define ISASCII(a) ((unsigned)a < 128u)
@@ -103,6 +111,10 @@ void				ft_lstdelnode(t_list **head, t_list *node,
 													void (*del)(void*, size_t));
 void				ft_printlst(t_list **head);
 char				*ft_strndup(const char *src, size_t len);
+<<<<<<< HEAD
 t_list				*ft_lstfind(t_list *begin_list, void *data, int (*cmp)());
+=======
+size_t				ft_findchr(const char *s, int c);
+>>>>>>> 440ed5b9b826a972cc54dcaf294400d14e4e0290
 
 #endif

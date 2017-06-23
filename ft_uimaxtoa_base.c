@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelnode.c                                    :+:      :+:    :+:   */
+/*   ft_uimaxtoa_base.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 15:15:38 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/23 03:50:55 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/04/06 15:20:33 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/04/06 16:35:34 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-void	ft_lstdelnode(t_list **head, t_list *node, void (*del)(void*, size_t))
+char	*ft_uimaxtoa_base(uintmax_t value, int8_t base, const char *str)
 {
-	t_list *temp;
+	uintmax_t	i;
+	size_t		size;
+	char		*ret;
 
-	if (!node)
-		return ;
-	if (*head == node)
-		*head = (*head)->next;
-	else
-	{
-		temp = *head;
-		while (temp->next != 0 && temp->next != node)
-			temp = temp->next;
-		if (temp->next == 0)
-			return ;
-		temp->next = temp->next->next;
-	}
-	ft_lstdelone(&node, del);
+	i = value;
+	size = 1;
+	while ((i /= base))
+		size++;
+	ret = (char *)malloc(sizeof(char) * (size + 1));
+	ret[size] = '\0';
+	i = value;
+	ret[--size] = str[i % base];
+	while ((i /= base))
+		ret[--size] = str[i % base];
+	return (ret);
 }

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_map.c                                      :+:      :+:    :+:   */
+/*   ft_findchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/12 18:59:54 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/03/12 19:00:55 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/03/21 22:01:36 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/04/12 20:29:02 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_map(char **map)
+size_t		ft_findchr(const char *s, int c)
 {
-	size_t i;
+	int				i;
+	unsigned char	a;
 
+	a = (unsigned char)c;
 	i = 0;
-	while (map[i])
+	while (s[i] != '\0')
 	{
-		free(map[i]);
+		if (s[i] == a)
+			return (i);
 		i++;
 	}
-	free(map);
+	if (s[i] == a)
+		return (ft_strlen(s));
+	return (0);
 }

@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_map.c                                      :+:      :+:    :+:   */
+/*   ft_isnan.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/12 18:59:54 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/03/12 19:00:55 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/04/09 17:01:39 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/04/09 17:05:34 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_free_map(char **map)
+int		ft_isnan(double num)
 {
-	size_t i;
-
-	i = 0;
-	while (map[i])
-	{
-		free(map[i]);
-		i++;
-	}
-	free(map);
+	return (num != num);
 }
