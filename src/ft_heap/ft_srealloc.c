@@ -6,31 +6,34 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 21:38:33 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/24 07:20:06 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/24 08:02:53 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_heap.h>
 
+#include <stdio.h>
+
 static void	*srealloc_node(t_memnode *start, size_t src_size, size_t new_size)
 {
 	t_heap_man	*heap_man;
-	t_memnode	*new_ptr;
+	t_memnode	*new_node;
 
-	new_ptr = malloc(new_size);
-	ft_memcpy(new_ptr, start, src_size);
+	if ((new_node = malloc(new_size + sizeof(t_memnode))) == NULL)
+		return (NULL);
+	ft_memcpy(new_node, start, src_size + sizeof(t_memnode));
 	free(start);
 	heap_man = ft_get_heap();
-	if (new_ptr->prev == NULL)
-		heap_man->first = new_ptr;
+	if (new_node->prev == NULL)
+		heap_man->first = new_node;
 	else
-		new_ptr->prev->next = new_ptr;
-	if (new_ptr->next == NULL)
-		heap_man->last = new_ptr;
+		new_node->prev->next = new_node;
+	if (new_node->next == NULL)
+		heap_man->last = new_node;
 	else
-		new_ptr->next->prev = new_ptr;
-	new_ptr->ptr = (char *)new_ptr + sizeof(t_memnode);
-	return (new_ptr->ptr);
+		new_node->next->prev = new_node;
+	new_node->ptr = (char *)new_node + sizeof(t_memnode);
+	return (new_node->ptr);
 }
 
 void		*ft_srealloc(void *ptr, size_t src_size, size_t new_size)

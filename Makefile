@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/06/24 07:29:47 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/06/24 08:25:47 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ DNARR		:=	dnarr_init dnarr_kill dnarr_man
 FT_CTYPE	:=	ft_isalnum ft_isalpha ft_isascii	\
 				ft_isdigit ft_isprint ft_isspace	\
 				ft_islower ft_isupper ft_tolower ft_toupper
-FT_HEAP		:=	ft_get_heap ft_heap_free ft_sfree ft_smalloc ft_srealloc
+FT_HEAP		:=	ft_get_heap ft_heap_free ft_sfree ft_smalloc ft_smemalloc \
+				ft_srealloc
 FT_MATH		:=	ft_isinf ft_isnan ft_pow ft_sqrtf
 FT_PRINTF_H :=	ft_pf_chr_conv ft_pf_float_conv ft_pf_fmt_parse \
 				ft_pf_handle_spec ft_pf_num_conv ft_pf_bonus ft_pf_handlers \

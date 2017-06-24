@@ -6,14 +6,14 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 21:06:10 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/24 07:31:00 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/24 08:26:00 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_HEAP_H
 # define FT_HEAP_H
 
-# include <libft.h>
+# include "libft.h"
 
 typedef struct s_memnode	t_memnode;
 typedef struct s_heap_man	t_heap_man;
@@ -36,6 +36,7 @@ struct			s_heap_man
 */
 
 void			*ft_smalloc(size_t size);
+void			*ft_smemalloc(size_t size);
 void			*ft_srealloc(void *ptr, size_t src_size, size_t new_size);
 
 /*
