@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/24 07:39:03 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/24 20:49:29 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # include "ft_string.h"
 # include "ft_term.h"
 # include "ft_vector.h"
+# include "fts_safe.h"
 # include "get_next_line.h"
 # include "lst.h"
 # include "mem.h"

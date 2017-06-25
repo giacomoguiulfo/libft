@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   fts_strjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/11 21:45:24 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/24 23:43:56 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/03/03 16:52:18 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/06/24 20:30:28 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include <libft.h>
 
-# define GNL_BUFF_SIZE 1024
-# define GNL_CHK(a) if(1){if(a){return(-1);}}
-
-typedef struct	s_gnl
+char	*fts_strjoin(char const *s1, char const *s2)
 {
-	int			fd;
-	char		*file_content;
-}				t_gnl;
+	char	*str;
+	char	*start;
 
-int				get_next_line(const int fd, char **line);
-void			ft_gnl_free(void *content, size_t size);
-t_list			**ft_gnl_list(void);
-
-#endif
+	if (!s1 || !s2 ||
+		(str = fts_strnew(ft_strlen(s1) + ft_strlen(s2) + 1)) == 0)
+		return (NULL);
+	start = str;
+	while (*s1)
+		*str++ = *s1++;
+	while (*s2)
+		*str++ = *s2++;
+	*str = '\0';
+	return (start);
+}

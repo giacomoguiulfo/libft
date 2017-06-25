@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   fts_gnl.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 06:07:48 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/24 23:44:18 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/24 21:50:09 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-static int	gnl_read(int fd, char **line, char *content)
+static void		gnl_free(void *content, size_t size)
+{
+	(void)size;
+	(void)content;
+	// ft_strdel(&((t_gnl *)content)->file_content);
+	// fts_free(content);
+}
+
+static int		gnl_read(int fd, char **line, char *content)
 {
 	char	buf[GNL_BUFF_SIZE + 1];
 	char	*tmp;
@@ -22,62 +30,52 @@ static int	gnl_read(int fd, char **line, char *content)
 	content[0] = '\0';
 	while ((ret = read(fd, buf, GNL_BUFF_SIZE)))
 	{
-		GNL_CHK(ret < 0);
+		if (ret < 0)
+			return (-1);
 		buf[ret] = '\0';
 		if ((ptr = ft_strchr(buf, '\n')) != NULL)
+		{
 			ft_strcpy(content, ptr + 1);
-		if (ptr != NULL)
 			*ptr = '\0';
+		}
 		tmp = *line;
-		GNL_CHK((*line = ft_strjoin(*line, buf)) == NULL);
-		ft_strdel(&tmp);
+		if ((*line = ft_strjoin(*line, buf)) == NULL)
+			return (-1);
+		// free(tmp);
 		if (ptr)
 			return (1);
 	}
-	if (*line[0] == '\0')
-		ft_strdel(line);
-	else
-		return (1);
-	return (0);
+	return ((*line[0] != '\0') ? 1 : 0);
 }
 
-static int	gnl_cmp_fd(t_gnl *node, int *fd)
+static t_list	*gnl_new_fd(t_list **begin_list, int fd)
+{
+	t_gnl	new;
+
+	new.fd = fd;
+	new.file_content = ft_strnew(GNL_BUFF_SIZE);
+	ft_lstadd(begin_list, fts_lstnew(&new, sizeof(t_gnl)));
+	return (*begin_list);
+}
+
+static int		gnl_cmp_fd(t_gnl *node, int *fd)
 {
 	return (node->fd - *fd);
 }
 
-t_list		**ft_gnl_list(void)
+int				fts_gnl(const int fd, char **line)
 {
 	static t_list	*head;
+	t_list			*tmp;
+	char			*ptr;
+	int				ret;
 
-	return (&head);
-}
-
-void		ft_gnl_free(void *content, size_t size)
-{
-	(void)size;
-	ft_strdel(&((t_gnl *)content)->file_content);
-	free(content);
-}
-
-int			get_next_line(const int fd, char **line)
-{
-	t_list	**head;
-	t_list	*tmp;
-	t_gnl	new;
-	char	*ptr;
-	int		ret;
-
-	GNL_CHK(fd < 0 || !line);
-	head = ft_gnl_list();
-	if ((tmp = ft_lstfind(*head, (void *)&fd, gnl_cmp_fd)) == NULL)
-	{
-		new.fd = fd;
-		new.file_content = ft_strnew(GNL_BUFF_SIZE);
-		ft_lstadd(head, ft_lstnew(&new, sizeof(t_gnl)));
-		tmp = *head;
-	}
-	GNL_CHK((*line = ft_strdup(((t_gnl*)tmp->content)->file_content)) == NULL);
+	if (fd < 0 || !line)
+		return (-1);
+	if ((tmp = ft_lstfind(head, (void *)&fd, gnl_cmp_fd)) == NULL)
+		tmp = gnl_new_fd(&head, fd);
+	if ((*line = ft_strdup(((t_gnl*)tmp->content)->file_content)) == NULL)
+		return (-1);
 	if ((ptr = ft_strchr(*line, '\n')) != NULL)
 	{
 		ft_strcpy((((t_gnl *)tmp->content)->file_content), ptr + 1);
@@ -85,6 +83,9 @@ int			get_next_line(const int fd, char **line)
 		return (1);
 	}
 	if ((ret = gnl_read(fd, line, (((t_gnl*)tmp->content)->file_content))) == 0)
-		ft_lstdelnode(head, tmp, ft_gnl_free);
+	{
+		// ft_strdel(line);
+		ft_lstdelnode(&head, tmp, gnl_free);
+	}
 	return (ret);
 }

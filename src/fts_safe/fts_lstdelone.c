@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_heap.c                                      :+:      :+:    :+:   */
+/*   fts_lstdelone.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/21 21:10:18 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/23 07:00:16 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/03/04 19:51:46 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/06/24 21:50:43 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_heap.h>
+#include <libft.h>
 
-t_heap_man	*ft_get_heap(void)
+void	fts_lstdelone(t_list **alst, void (*del)(void*, size_t))
 {
-	static t_heap_man	*heap_man;
-
-	if (heap_man == NULL)
-		heap_man = ft_memalloc(sizeof(t_heap_man));
-	return (heap_man);
+	del((*alst)->content, (*alst)->content_size);
+	fts_free(*alst);
+	*alst = NULL;
 }

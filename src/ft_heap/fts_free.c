@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sfree.c                                         :+:      :+:    :+:   */
+/*   fts_free.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 23:39:06 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/24 07:19:53 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/24 21:07:44 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	mfree_node(t_memnode *memnode)
 {
 	t_heap_man *heap_man;
 
-	heap_man = ft_get_heap();
+	heap_man = fts_get_heap();
 	if (memnode->prev == NULL)
 		heap_man->first = memnode->next;
 	else
@@ -28,7 +28,7 @@ static void	mfree_node(t_memnode *memnode)
 	free(memnode);
 }
 
-int			ft_sfree(void *ptr)
+int			fts_free(void *ptr)
 {
 	t_memnode	*memnode;
 

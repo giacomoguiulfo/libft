@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/06/24 08:25:47 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/06/24 21:27:28 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ DNARR		:=	dnarr_init dnarr_kill dnarr_man
 FT_CTYPE	:=	ft_isalnum ft_isalpha ft_isascii	\
 				ft_isdigit ft_isprint ft_isspace	\
 				ft_islower ft_isupper ft_tolower ft_toupper
-FT_HEAP		:=	ft_get_heap ft_heap_free ft_sfree ft_smalloc ft_smemalloc \
-				ft_srealloc
+FT_HEAP		:=	fts_get_heap fts_heap_free fts_free fts_malloc fts_memalloc \
+				fts_realloc
 FT_MATH		:=	ft_isinf ft_isnan ft_pow ft_sqrtf
 FT_PRINTF_H :=	ft_pf_chr_conv ft_pf_float_conv ft_pf_fmt_parse \
 				ft_pf_handle_spec ft_pf_num_conv ft_pf_bonus ft_pf_handlers \
@@ -38,6 +38,8 @@ FT_STRING	:=	ft_bzero ft_memccpy ft_memchr ft_memcmp ft_memcpy		\
 				ft_strstr
 FT_TERM		:=	ft_clrscreen ft_cursor_goto ft_get_win_size ft_highlight \
 				ft_termcmd ft_underline
+FTS_SAFE	:=	fts_gnl fts_lstdelnode fts_lstdelone fts_lstnew fts_strdel \
+				fts_strdup fts_strjoin fts_strnew
 FT_VECTOR	:=	ft_cvector
 GNL			:=	get_next_line
 LST			:=	ft_lstadd ft_lstdelnode ft_lstdel ft_lstdelone ft_lstfind \
@@ -63,49 +65,59 @@ FILES		:=	$(addprefix arr/, $(ARR))				\
 				$(addprefix ft_stdlib/, $(FT_STDLIB))	\
 				$(addprefix ft_string/, $(FT_STRING))	\
 				$(addprefix ft_term/, $(FT_TERM))		\
+				$(addprefix fts_safe/, $(FTS_SAFE))		\
 				$(addprefix vector/, $(FT_VECTOR))		\
 				$(addprefix gnl/, $(GNL))				\
 				$(addprefix lst/, $(LST))				\
 				$(addprefix mem/, $(MEM))				\
 				$(addprefix nbr/, $(NBR))				\
-				$(addprefix str/, $(STR))				\
+				$(addprefix str/, $(STR))
 
 OBJDIR	:= obj/
 SRCDIR	:= src/
-
 SRC			:=	$(addprefix $(SRCDIR)/, $(addsuffix .c, $(FILES)))
 OBJ			:=	$(patsubst $(SRCDIR)/%, $(OBJDIR)/%, $(SRC:.c=.o))
 
-MAX			:=	$(words $(OBJ))
-n			:=	x
-increment	=	$1 x
-COUNTER		=	$(words $n)$(eval n := $(call increment,$n))
+NB			=	$(words $(FILES))
+INDEX		=	0
+LEN_NAME	=	`printf "%s" $(NAME) |wc -c`
+DELTA		=	$$(echo "$$(tput cols)-31-$(LEN_NAME)"|bc)
+SHELL		:= /bin/bash
 
-.PHONY = all obj clean fclean re
-
-all: obj $(NAME)
+all:
+	@$(MAKE) -j $(NAME)
 
 obj:
 	@mkdir -p $(OBJDIR)
 
-$(NAME): $(OBJ)
-	@printf "\r\e[32mCompiling...(%d/%d)[DONE]\n\e[0m" $(MAX) $(MAX)
-	@printf "\e[32mLinking and indexing...\e[0m"
+$(NAME): $(OBJ) Makefile
 	@ar rcs $(NAME) $(OBJ)
-	@printf "\e[32m[DONE]\e[0m\n"
-	@printf "\e[32mCompiled library: libft\e[0m\n"
+	@printf "\r\033[38;5;117m✓ Compiled $(NAME)\033[0m\033[K\n"
 
-$(OBJDIR)%.o: $(SRCDIR)%.c
+$(OBJDIR)%.o: $(SRCDIR)%.c Makefile | $(OBJDIR)
+	@$(eval DONE=$(shell echo $$(($(INDEX)*20/$(NB)))))
+	@$(eval PERCENT=$(shell echo $$(($(INDEX)*100/$(NB)))))
+	@$(eval TO_DO=$(shell echo $$((20-$(INDEX)*20/$(NB) - 1))))
+	@$(eval COLOR=$(shell list=(160 196 202 208 215 221 226 227 190 154 118 82 46); index=$$(($(PERCENT) * $${#list[@]} / 100)); echo "$${list[$$index]}"))
+	@printf "\r\033[38;5;%dm⌛ [%s]: %2d%% `printf '█%.0s' {0..$(DONE)}`%*s❙%*.*s\033[0m\033[K" $(COLOR) $(NAME) $(PERCENT) $(TO_DO) "" $(DELTA) $(DELTA) "$(shell echo "$@" | sed 's/^.*\///')"
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -o $@ -c $<
-	@printf "\r\e[32mCompiling...(%d/%d)\e[0m" $(COUNTER) $(MAX)
+	@$(eval INDEX=$(shell echo $$(($(INDEX)+1))))
 
 clean:
-	@rm -rf $(OBJDIR)
-	@printf "\e[32mRemoved object files\e[0m\n"
+	@if [ -e $(OBJDIR) ]; \
+	then \
+		rm -rf $(OBJDIR); \
+		printf "\r\033[38;5;202m✗ clean -> $(NAME).\033[0m\033[K\n"; \
+	fi;
 
 fclean: clean
-	@rm -f $(NAME)
-	@printf "\e[32mRemoved library: libft\e[0m\n"
+	@if [ -e $(NAME) ]; \
+	then \
+		rm -rf $(NAME); \
+		printf "\r\033[38;5;196m✗ fclean -> $(NAME).\033[0m\033[K\n"; \
+	fi;
 
 re: fclean all
+
+.PHONY = all obj clean fclean re

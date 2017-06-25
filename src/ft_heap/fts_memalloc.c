@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   fts_memalloc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/11 21:45:24 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/24 23:43:56 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/06/24 08:21:08 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/06/24 21:06:49 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include <ft_heap.h>
 
-# define GNL_BUFF_SIZE 1024
-# define GNL_CHK(a) if(1){if(a){return(-1);}}
-
-typedef struct	s_gnl
+void	*fts_memalloc(size_t size)
 {
-	int			fd;
-	char		*file_content;
-}				t_gnl;
+	void	*ptr;
 
-int				get_next_line(const int fd, char **line);
-void			ft_gnl_free(void *content, size_t size);
-t_list			**ft_gnl_list(void);
-
-#endif
+	ptr = fts_malloc(size);
+	ft_bzero(ptr, size);
+	return (ptr);
+}

@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_srealloc.c                                      :+:      :+:    :+:   */
+/*   fts_realloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 21:38:33 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/24 08:02:53 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/24 21:07:54 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_heap.h>
-
-#include <stdio.h>
 
 static void	*srealloc_node(t_memnode *start, size_t src_size, size_t new_size)
 {
@@ -23,7 +21,7 @@ static void	*srealloc_node(t_memnode *start, size_t src_size, size_t new_size)
 		return (NULL);
 	ft_memcpy(new_node, start, src_size + sizeof(t_memnode));
 	free(start);
-	heap_man = ft_get_heap();
+	heap_man = fts_get_heap();
 	if (new_node->prev == NULL)
 		heap_man->first = new_node;
 	else
@@ -36,18 +34,18 @@ static void	*srealloc_node(t_memnode *start, size_t src_size, size_t new_size)
 	return (new_node->ptr);
 }
 
-void		*ft_srealloc(void *ptr, size_t src_size, size_t new_size)
+void		*fts_realloc(void *ptr, size_t src_size, size_t new_size)
 {
 	t_memnode	*start;
 
 	if (!new_size)
 	{
 		if (ptr)
-			ft_sfree(ptr);
+			fts_free(ptr);
 		return (ptr);
 	}
 	if (ptr == NULL)
-		return (ft_smalloc(sizeof(new_size)));
+		return (fts_malloc(sizeof(new_size)));
 	if (new_size <= src_size)
 		return (ptr);
 	start = (t_memnode *)((char *)ptr - sizeof(t_memnode));

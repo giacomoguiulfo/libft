@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 21:06:10 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/24 08:26:00 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/06/24 21:07:20 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,21 @@ struct			s_heap_man
 ** Memory allocation
 */
 
-void			*ft_smalloc(size_t size);
-void			*ft_smemalloc(size_t size);
-void			*ft_srealloc(void *ptr, size_t src_size, size_t new_size);
+void			*fts_malloc(size_t size);
+void			*fts_memalloc(size_t size);
+void			*fts_realloc(void *ptr, size_t src_size, size_t new_size);
 
 /*
 ** Memory deallocation
 */
 
-int				ft_sfree(void *ptr);
-int				ft_heap_free(void);
+int				fts_free(void *ptr);
+int				fts_heap_free(void);
 
 /*
 ** Heap manager
 */
 
-t_heap_man		*ft_get_heap(void);
+t_heap_man		*fts_get_heap(void);
 
 #endif

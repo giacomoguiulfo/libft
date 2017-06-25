@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_scalloc.c                                       :+:      :+:    :+:   */
+/*   fts_strnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/24 08:21:08 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/24 08:24:36 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/03/03 15:42:20 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/06/24 20:30:39 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_heap.h>
+#include <libft.h>
 
-void	*ft_smemalloc(size_t size)
+char	*fts_strnew(size_t size)
 {
-	void	*ptr;
+	char *str;
+	char *start;
 
-	ptr = ft_smalloc(size);
-	ft_bzero(ptr, size);
-	return (ptr);
+	if ((str = (char *)fts_malloc(sizeof(char) * size + 1)) == 0)
+		return (0);
+	start = str;
+	while (size--)
+		*str++ = '\0';
+	*str = '\0';
+	return (start);
 }
