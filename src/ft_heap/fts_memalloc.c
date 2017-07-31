@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_heap.c                                      :+:      :+:    :+:   */
+/*   fts_memalloc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/21 21:10:18 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/23 07:00:16 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/06/24 08:21:08 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/06/24 21:06:49 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_heap.h>
 
-t_heap_man	*ft_get_heap(void)
+void	*fts_memalloc(size_t size)
 {
-	static t_heap_man	*heap_man;
+	void	*ptr;
 
-	if (heap_man == NULL)
-		heap_man = ft_memalloc(sizeof(t_heap_man));
-	return (heap_man);
+	ptr = fts_malloc(size);
+	ft_bzero(ptr, size);
+	return (ptr);
 }

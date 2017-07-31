@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_scalloc.c                                       :+:      :+:    :+:   */
+/*   fts_heap_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/24 08:21:08 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/24 08:24:36 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/06/21 21:04:59 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/06/24 21:06:45 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_heap.h>
 
-void	*ft_smemalloc(size_t size)
+int		fts_heap_free(void)
 {
-	void	*ptr;
+	t_heap_man	*heap_man;
+	t_memnode	*memnode;
+	t_memnode	*next;
 
-	ptr = ft_smalloc(size);
-	ft_bzero(ptr, size);
-	return (ptr);
+	heap_man = fts_get_heap();
+	if (heap_man == NULL)
+		return (1);
+	memnode = heap_man->first;
+	while (memnode != NULL)
+	{
+		next = memnode->next;
+		free(memnode);
+		memnode = next;
+	}
+	free(heap_man);
+	return (0);
 }

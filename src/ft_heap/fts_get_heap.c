@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_heap_free.c                                     :+:      :+:    :+:   */
+/*   fts_get_heap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/21 21:04:59 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/23 06:45:23 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/06/21 21:10:18 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/06/24 21:06:43 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_heap.h>
 
-int		ft_heap_free(void)
+t_heap_man	*fts_get_heap(void)
 {
-	t_heap_man	*heap_man;
-	t_memnode	*memnode;
-	t_memnode	*next;
+	static t_heap_man	*heap_man;
 
-	heap_man = ft_get_heap();
 	if (heap_man == NULL)
-		return (1);
-	memnode = heap_man->first;
-	while (memnode != NULL)
-	{
-		next = memnode->next;
-		free(memnode);
-		memnode = next;
-	}
-	free(heap_man);
-	return (0);
+		heap_man = ft_memalloc(sizeof(t_heap_man));
+	return (heap_man);
 }
