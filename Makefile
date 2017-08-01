@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/08/01 16:10:27 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/08/01 16:12:25 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -195,7 +195,7 @@ SHELL		= /bin/bash
 # Rules:
 ## Compiles the library
 all:
-	@$(MAKE) $(NAME)
+	@$(MAKE) -j $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
