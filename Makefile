@@ -6,22 +6,21 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/07/31 16:26:48 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/08/01 16:10:27 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Library Name
-NAME		:= libft.a
+NAME	:= libft.a
 
 # Compiler Information
-CC			:=	gcc
-CFLAGS		+= -Wall -Wextra -Werror -O3
-CFLAGS		+= -I includes
+CC		:=	gcc
+CFLAGS	+= -Wall -Wextra -Werror -O3
 
-# Folders
-INCDIR		:= includes/
-OBJDIR		:= obj/
-SRCDIR		:= src/
+# Directories
+INC_DIR	:= includes/
+OBJ_DIR	:= obj/
+SRC_DIR	:= src/
 
 # Library Content
 ARR :=						\
@@ -35,7 +34,7 @@ DNARR :=					\
 	dnarr_init 				\
 	dnarr_kill 				\
 	dnarr_man
-FT_CTYPE 		:=			\
+FT_CTYPE :=					\
 	ft_isalnum 				\
 	ft_isalpha 				\
 	ft_isascii 				\
@@ -161,30 +160,30 @@ STR :=						\
 	ft_strsub 				\
 	ft_strtrim
 
-FILES	:=														\
-			$(addprefix arr/, $(ARR))							\
-			$(addprefix chr/, $(CHR))							\
-			$(addprefix dnarr/, $(DNARR))						\
-			$(addprefix ft_ctype/, $(FT_CTYPE))					\
-			$(addprefix ft_heap/, $(FT_HEAP))					\
-			$(addprefix ft_math/, $(FT_MATH))					\
-			$(addprefix ft_printf/, $(FT_PRINTF_H))				\
-			$(addprefix ft_printf/, $(FT_PRINTF))				\
-			$(addprefix sort/, $(FT_SORT))						\
-			$(addprefix ft_stdlib/, $(FT_STDLIB))				\
-			$(addprefix ft_string/, $(FT_STRING))				\
-			$(addprefix ft_term/, $(FT_TERM))					\
-			$(addprefix vector/, $(FT_VECTOR))					\
-			$(addprefix gnl/, $(GNL))							\
-			$(addprefix lst/, $(LST))							\
-			$(addprefix mem/, $(MEM))							\
-			$(addprefix nbr/, $(NBR))							\
-			$(addprefix str/, $(STR))							\
+FILES	:=										\
+	$(addprefix arr/, $(ARR))					\
+	$(addprefix chr/, $(CHR))					\
+	$(addprefix dnarr/, $(DNARR))				\
+	$(addprefix ft_ctype/, $(FT_CTYPE))			\
+	$(addprefix ft_heap/, $(FT_HEAP))			\
+	$(addprefix ft_math/, $(FT_MATH))			\
+	$(addprefix ft_printf/, $(FT_PRINTF_H))		\
+	$(addprefix ft_printf/, $(FT_PRINTF))		\
+	$(addprefix sort/, $(FT_SORT))				\
+	$(addprefix ft_stdlib/, $(FT_STDLIB))		\
+	$(addprefix ft_string/, $(FT_STRING))		\
+	$(addprefix ft_term/, $(FT_TERM))			\
+	$(addprefix vector/, $(FT_VECTOR))			\
+	$(addprefix gnl/, $(GNL))					\
+	$(addprefix lst/, $(LST))					\
+	$(addprefix mem/, $(MEM))					\
+	$(addprefix nbr/, $(NBR))					\
+	$(addprefix str/, $(STR))					\
 
 # File Assignation
-SRC			:=	$(addprefix $(SRCDIR)/, $(addsuffix .c, $(FILES)))
-OBJ			:=	$(patsubst $(SRCDIR)/%, $(OBJDIR)/%, $(SRC:.c=.o))
-HEADERS		:=  $(wildcard $(INCDIR)/*.h)
+SRC			:=	$(addprefix $(SRC_DIR)/, $(addsuffix .c, $(FILES)))
+OBJ			:=	$(patsubst $(SRC_DIR)/%, $(OBJ_DIR)/%, $(SRC:.c=.o))
+HEADERS		:=  $(wildcard $(INC_DIR)/*.h)
 
 # Output Dependencies
 NB			= $(words $(FILES))
@@ -193,45 +192,51 @@ LEN_NAME	= `printf "%s" $(NAME) | wc -c`
 DELTA		= $$(echo "$$(tput cols)-31-$(LEN_NAME)" | bc)
 SHELL		= /bin/bash
 
-.PHONY = all format clean fclean re
-# Rules
+# Rules:
+## Compiles the library
 all:
-	@$(MAKE) -j $(NAME)
+	@$(MAKE) $(NAME)
 
-$(NAME): $(OBJDIR) $(OBJ) $(HEADERS) Makefile
+$(NAME): $(OBJ_DIR) $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	@printf "\r\033[38;5;340m✓ Compiled $(NAME)\033[0m\033[K\n";
+	@printf "\r\033[38;5;15m✓ Compiled $(NAME)\033[0m\033[K\n";
 
-$(OBJDIR):
-	@mkdir -p $(OBJDIR)
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 	@mkdir -p $(dir $(OBJ))
 
-$(OBJDIR)%.o:$(SRCDIR)%.c Makefile | $(OBJDIR)
+$(OBJ_DIR)%.o:$(SRC_DIR)%.c Makefile | $(OBJ_DIR)
 	@$(eval DONE=$(shell echo $$(($(INDEX)*20/$(NB)))))
 	@$(eval PERCENT=$(shell echo $$(($(INDEX)*100/$(NB)))))
 	@$(eval TO_DO=$(shell echo $$((20-$(INDEX)*20/$(NB) - 1))))
-	@$(eval COLOR=$(shell list=(160 196 202 208 215 221 226 227 190 154 118 82 46); index=$$(($(PERCENT) * $${#list[@]} / 100)); echo "$${list[$$index]}"))
-	@printf "\r\033[38;5;%dm⌛[%s]:%2d%% `printf '█%.0s' {0..$(DONE)}`%*s❙ %*.*s\033[0m\033[K" $(COLOR) $(NAME) $(PERCENT) $(TO_DO) "" $(DELTA) $(DELTA) "$(shell echo "$@" | sed 's/^.*\///')"
-	@$(CC) $(CFLAGS) -c $< -o $@ -I $(INCDIR)
+	@$(eval COLOR=$(shell list=(141 105 69 33 39 45 51 87 123 159 195 231 15); index=$$(($(PERCENT) * $${#list[@]} / 100)); echo "$${list[$$index]}"))
+	@printf "\r\033[38;5;%dm⌛ [%s]:%2d%% `printf '█%.0s' {0..$(DONE)}`%*s❙ %*.*s\033[0m\033[K" $(COLOR) $(NAME) $(PERCENT) $(TO_DO) "" $(DELTA) $(DELTA) "$(shell echo "$@" | sed 's/^.*\///')"
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 	@$(eval INDEX=$(shell echo $$(($(INDEX)+1))))
 
+## Attempts to format source code according to the "Norme" standard
+## Note: Do not use if code is already or mostly "normed"
 format: $(SRC) $(HEADERS)
 	@clang-format -i $^ -assume-filename=../.clang-format
 
+## Removes object files if they are present
 clean:
-	@if [ -e $(OBJDIR) ]; \
+	@if [ -e $(OBJ_DIR) ]; \
 		then \
-			rm -rf $(OBJDIR); \
-			printf "\r\033[38;5;190m✗ clean -> $(NAME).\033[0m\033[K\n"; \
+			rm -rf $(OBJ_DIR); \
+			printf "\r\033[38;5;219m✗ Removed $(NAME) $(OBJ_DIR).\033[0m\033[K\n"; \
 		fi;
 
+## Removes the library and the object files if they're present
 fclean: clean
 	@if [ -e $(NAME) ]; \
 	then \
 		rm -rf $(NAME); \
-		printf "\r\033[38;5;196m✗ fclean -> $(NAME).\033[0m\033[K\n"; \
+		printf "\r\033[38;5;33m✗ Removed $(NAME).\033[0m\033[K\n"; \
 	fi;
 
+## Relinks the library
 re: fclean all
 
--include $(OBJS:.o=.d)
+.PHONY: all format clean fclean re
+-include $(OBJ:.o=.d)
