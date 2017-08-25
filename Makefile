@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/08/01 16:12:25 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/08/21 09:05:44 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,8 @@ FT_CTYPE :=					\
 	ft_isupper 				\
 	ft_tolower 				\
 	ft_toupper
+FT_ERROR :=					\
+	ft_error_exit
 FT_HEAP :=					\
 	fts_get_heap 			\
 	fts_heap_free 			\
@@ -165,6 +167,7 @@ FILES	:=										\
 	$(addprefix chr/, $(CHR))					\
 	$(addprefix dnarr/, $(DNARR))				\
 	$(addprefix ft_ctype/, $(FT_CTYPE))			\
+	$(addprefix ft_error/, $(FT_ERROR))			\
 	$(addprefix ft_heap/, $(FT_HEAP))			\
 	$(addprefix ft_math/, $(FT_MATH))			\
 	$(addprefix ft_printf/, $(FT_PRINTF_H))		\

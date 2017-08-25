@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_error.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/02 17:43:52 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/08/21 08:47:14 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/08/21 08:58:55 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/08/21 09:01:42 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_ERROR_H
+# define FT_ERROR_H
 
-/*
-** Description:
-** This function is equivalent to libc's putchar() function, man putchar(3).
-*/
+void	ft_error_exit(const char *str);
 
-int	ft_putchar(int c)
-{
-	return (write(STDOUT_FILENO, &c, 1));
-}
+#endif

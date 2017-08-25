@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_error_exit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/02 17:43:52 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/08/21 08:47:14 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/08/21 08:56:24 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/08/21 08:56:44 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <libft.h>
 
-/*
-** Description:
-** This function is equivalent to libc's putchar() function, man putchar(3).
-*/
-
-int	ft_putchar(int c)
+void	ft_error_exit(const char *str)
 {
-	return (write(STDOUT_FILENO, &c, 1));
+	ft_dprintf(STDERR_FILENO, "%{bred}Error: %s%{eoc}\n", str);
+	exit(EXIT_FAILURE);
 }

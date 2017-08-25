@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/07/31 16:23:05 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/08/21 09:02:39 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include "chr.h"
 # include "dnarr.h"
 # include "ft_ctype.h"
+# include "ft_error.h"
 # include "ft_heap.h"
 # include "ft_math.h"
 # include "ft_printf.h"
