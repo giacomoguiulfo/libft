@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 20:27:34 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:48:49 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/09/06 11:41:12 by giacomo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_putendl_fd(char const *s, int fd);
 void	ft_putendl(char const *s);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putstr(char const *s);
+char	*ft_str_tolower(char *str);
 void	ft_strclr(char *s);
 void	ft_strdel(char **as);
 int		ft_strequ(char const *s1, char const *s2);

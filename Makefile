@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/08/21 09:05:44 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/09/06 11:41:35 by giacomo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -147,6 +147,7 @@ STR :=						\
 	ft_putendl 				\
 	ft_putstr_fd 			\
 	ft_putstr 				\
+	ft_str_tolower		\
 	ft_strclr				\
 	ft_strdel 				\
 	ft_strequ 				\
