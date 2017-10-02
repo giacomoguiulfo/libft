@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.h                                         :+:      :+:    :+:   */
+/*   ft_lst.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/21 08:58:55 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/10/01 20:21:26 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/10/01 20:15:26 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/10/01 20:18:20 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ERROR_H
-# define FT_ERROR_H
+#include <libft.h>
 
-void	ft_error_exit(const char *str);
-void	ft_usage(char const *name, char const *str);
+t_list	*ft_lst(void *content, size_t content_size)
+{
+	t_list	*node;
 
-#endif
+	if ((node = (t_list *)malloc(sizeof(t_list))) == 0)
+		return (NULL);
+	if (!content)
+	{
+		node->content = NULL;
+		node->content_size = 0;
+	}
+	else
+	{
+		node->content = content;
+		node->content_size = content_size;
+	}
+	node->next = NULL;
+	return (node);
+}

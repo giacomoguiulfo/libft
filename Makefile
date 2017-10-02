@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
+#    By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/09/06 11:41:35 by giacomo          ###   ########.fr        #
+#    Updated: 2017/10/01 20:22:04 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ FT_CTYPE :=					\
 	ft_tolower 				\
 	ft_toupper
 FT_ERROR :=					\
+	ft_usage				\
 	ft_error_exit
 FT_HEAP :=					\
 	fts_get_heap 			\
@@ -112,6 +113,7 @@ FT_VECTOR :=				\
 GNL :=						\
 	get_next_line
 LST	:=						\
+	ft_lst					\
 	ft_lstadd 				\
 	ft_lstdelnode 			\
 	ft_lstdel 				\

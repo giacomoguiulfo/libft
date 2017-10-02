@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 19:35:03 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/23 06:02:25 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/10/01 20:18:35 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ struct		s_list
 	t_list	*next;
 };
 
+t_list		*ft_lst(void *content, size_t content_size);
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list		*ft_lstnew(void const *content, size_t content_size);
 t_list		*ft_lstfind(t_list *begin_list, void *data, int (*cmp)());
