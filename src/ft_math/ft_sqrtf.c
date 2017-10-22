@@ -15,22 +15,14 @@
 ** Equivalent of libm's sqrtf() function, man sqrtf(3).
 */
 
-float	ft_sqrtf(float x)
+float ft_sqrtf(float x)
 {
-	const float	n = 0.0001;
-	float		ret;
-
-	if (x <= 0)
-		return (0);
-	ret = 0;
-	while (ret < x)
+	float ret;
+  
+	ret = 1.0f;
+	while (ABS((ret * ret) / x - 1.0f) >= 0.0000001f)
 	{
-		if ((ret * ret) > x)
-		{
-			ret -= n;
-			break ;
-		}
-		ret += n;
+		ret -= (ret * ret - x) / (2 * ret);
 	}
 	return (ret);
 }
