@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrtf.c                                         :+:      :+:    :+:   */
+/*   darr_man.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/08 15:51:59 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/20 10:48:43 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/05/02 23:54:23 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/05/03 01:03:15 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <darr.h>
 
-/*
-** Description:
-** Equivalent of libm's sqrtf() function, man sqrtf(3).
-*/
-
-float ft_sqrtf(float x)
+void		*ft_darr_get(t_darr *array, int i)
 {
-	float ret;
-  
-	ret = 1.0f;
-	while (ABS((ret * ret) / x - 1.0f) >= 0.0000001f)
-		ret -= (ret * ret - x) / (2 * ret);
-	return (ret);
+	if (!(i < array->size))
+		return (NULL);
+	return (array->content[i]);
 }

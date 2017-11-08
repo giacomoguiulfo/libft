@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrtf.c                                         :+:      :+:    :+:   */
+/*   darr_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/08 15:51:59 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/20 10:48:43 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/04/25 01:33:21 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/06/20 10:42:46 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <darr.h>
 
-/*
-** Description:
-** Equivalent of libm's sqrtf() function, man sqrtf(3).
-*/
-
-float ft_sqrtf(float x)
+int	ft_darr_resize(t_darr *array, size_t newsize)
 {
-	float ret;
-  
-	ret = 1.0f;
-	while (ABS((ret * ret) / x - 1.0f) >= 0.0000001f)
-		ret -= (ret * ret - x) / (2 * ret);
-	return (ret);
+	void *contents;
+
+	if (newsize <= 0)
+		return (-1);
+	contents = ft_realloc(array->content, array->size * sizeof(void *),
+							newsize * sizeof(void *));
+	array->size = newsize;
+	array->content = contents;
+	return (0);
 }

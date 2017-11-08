@@ -30,10 +30,21 @@ CHR :=						\
 	ft_putchar_fd 			\
 	ft_putchar 				\
 	ft_getchar
-DNARR :=					\
-	dnarr_init 				\
-	dnarr_kill 				\
-	dnarr_man
+DARR :=						\
+	ft_darr_clear			\
+	ft_darr_contract		\
+	ft_darr_destroy			\
+	ft_darr_expand			\
+	ft_darr_get				\
+	ft_darr_init			\
+	ft_darr_kill			\
+	ft_darr_new				\
+	ft_darr_pop				\
+	ft_darr_push			\
+	ft_darr_remove			\
+	ft_darr_resize			\
+	ft_darr_reverse			\
+	ft_darr_set
 FT_CTYPE :=					\
 	ft_isalnum 				\
 	ft_isalpha 				\
@@ -168,7 +179,7 @@ STR :=						\
 FILES	:=										\
 	$(addprefix arr/, $(ARR))					\
 	$(addprefix chr/, $(CHR))					\
-	$(addprefix dnarr/, $(DNARR))				\
+	$(addprefix darr/, $(DARR))					\
 	$(addprefix ft_ctype/, $(FT_CTYPE))			\
 	$(addprefix ft_error/, $(FT_ERROR))			\
 	$(addprefix ft_heap/, $(FT_HEAP))			\

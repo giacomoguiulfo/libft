@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dnarr_kill.c                                       :+:      :+:    :+:   */
+/*   darr_kill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,45 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <dnarr.h>
+#include <darr.h>
 
-void		dnarr_clr(t_dnarr *array)
+void		ft_darr_kill(t_darr *array)
 {
-	int i;
-
-	i = 0;
-	if (array->element_size > 0)
-	{
-		while (i < array->end)
-		{
-			if (array->contents[i] != NULL)
-				free(array->contents[i]);
-			++i;
-		}
-	}
-}
-
-void		dnarr_destroy(t_dnarr *array)
-{
-	if (array)
-	{
-		if (array->contents)
-			free(array->contents);
-		free(array);
-	}
-}
-
-void		dnarr_clrdestroy(t_dnarr *array)
-{
-	dnarr_clr(array);
-	dnarr_destroy(array);
-}
-
-void		*dnarr_remove(t_dnarr *array, int i)
-{
-	void *el;
-
-	el = array->contents[i];
-	array->contents[i] = NULL;
-	return (el);
+	ft_darr_clear(array);
+	ft_darr_destroy(array);
 }
