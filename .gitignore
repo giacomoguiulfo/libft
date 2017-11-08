@@ -51,10 +51,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Debug Files
-*.dSYM/
-*.su
-
 # OS Generated Files
 .DS_Store
 .DS_Store?
@@ -68,6 +64,6 @@ Thumbs.db
 *.swp
 *.swo
 
-# Clion Filess #
+# Clion Files #
 .idea/
 cmake-build-debug/
