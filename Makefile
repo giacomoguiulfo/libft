@@ -126,14 +126,14 @@ GNL :=						\
 LST	:=						\
 	ft_lst					\
 	ft_lstadd 				\
+	ft_lstappend			\
 	ft_lstdelnode 			\
 	ft_lstdel 				\
 	ft_lstdelone 			\
 	ft_lstfind 				\
 	ft_lstiter 				\
 	ft_lstmap 				\
-	ft_lstnew 				\
-	ft_printlst
+	ft_lstnew
 MEM :=						\
 	ft_free_rows 			\
 	ft_memalloc 			\
