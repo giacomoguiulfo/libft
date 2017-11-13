@@ -19,6 +19,7 @@
 # include <stdbool.h>
 # include <unistd.h>
 # include <string.h>
+# include <stdint.h>
 
 # include "arr.h"
 # include "chr.h"

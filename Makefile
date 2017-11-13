@@ -15,12 +15,17 @@ NAME	:= libft.a
 
 # Compiler Information
 CC		:=	gcc
-CFLAGS	+= -Wall -Wextra -Werror -O3
+CFLAGS	+= -Wall -Wextra -Werror 
+# TODO: Add -03 later after fixing code
 
 # Directories
 INC_DIR	:= includes/
 OBJ_DIR	:= obj/
 SRC_DIR	:= src/
+
+ifndef VERBOSE
+MAKEFLAGS += --no-print-directory
+endif
 
 # Library Content
 ARR :=						\

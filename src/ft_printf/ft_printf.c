@@ -22,7 +22,8 @@ int		ft_printf(const char *format, ...)
 		return (0);
 	va_start(ap, format);
 	len = ft_vasprintf(&ret, format, ap);
-	write(1, ret, len);
+	if (write(1, ret, len) < 0)
+		return (-1);
 	free(ret);
 	va_end(ap);
 	return (len);
@@ -89,7 +90,8 @@ int		ft_dprintf(int fd, const char *format, ...)
 		return (0);
 	va_start(ap, format);
 	len = ft_vasprintf(&ret, format, ap);
-	write(fd, ret, len);
+	if (write(fd, ret, len) < 0)
+		return (-1);
 	free(ret);
 	va_end(ap);
 	return (len);
