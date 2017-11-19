@@ -15,8 +15,20 @@ NAME	:= libft.a
 
 # Compiler Information
 CC		:=	gcc
-CFLAGS	+= -Wall -Wextra -Werror 
+CFLAGS	+= -Wall -Wextra -Werror
 # TODO: Add -03 later after fixing code
+
+#CFLAGS		:= -Wall -Wextra -Werror -pedantic -std=c99
+#CFLAGS	+= -Wfloat-equal -Wundef -Wpointer-arith -Wcast-align
+#CFLAGS	+= -Wstrict-prototypes -Wconversion -Wunreachable-code
+#CFLAGS	+= -O3 -march=native -pipe -flto
+# DEBUG		:= 0
+# ifeq ($(DEBUG),1)
+# CFLAGS		+= -g -fsanitize=address
+# endif
+# ifndef VERBOSE
+# MAKEFLAGS 	+= --no-print-directory
+# endif
 
 # Directories
 INC_DIR	:= includes/
