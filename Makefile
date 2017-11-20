@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+         #
+#    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/10/01 20:22:04 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/11/19 17:31:33 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -150,7 +150,8 @@ LST	:=						\
 	ft_lstfind 				\
 	ft_lstiter 				\
 	ft_lstmap 				\
-	ft_lstnew
+	ft_lstnew				\
+	ft_lstsize
 MEM :=						\
 	ft_free_rows 			\
 	ft_memalloc 			\

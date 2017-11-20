@@ -40,6 +40,12 @@
 # include "nbr.h"
 # include "str.h"
 
+# ifndef DEBUG
+#  define DG_1			"%{bblue}%s, %{bcyan}%s, %{bgreen}%4d - %{bred}"
+#  define DG_2		__FILE__, __func__, __LINE__
+#  define DEBUG(f, ...)	ft_dprintf(2, DG_1 f "%{eoc}\n", DG_2, ##__VA_ARGS__)
+# endif
+
 # define ABS(a) ((a) * (((a) > 0) * 2 - 1))
 # define ARRLEN(a) (sizeof(a)/sizeof(a[0]))
 # define EVEN(n) (n % 2 == 0)
