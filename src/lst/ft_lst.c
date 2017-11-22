@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lst.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/01 20:15:26 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/10/01 20:18:20 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:18:09 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "lst.h"
+#include "libft.h"
+#include <stdlib.h>
 
 t_list	*ft_lst(void *content, size_t content_size)
 {

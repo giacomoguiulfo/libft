@@ -6,11 +6,15 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 06:07:48 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/07/31 16:26:12 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 15:20:35 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "gnl.h"
+#include "libft.h"
+#include <stddef.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 static int	gnl_read(int fd, char **line, char *content)
 {

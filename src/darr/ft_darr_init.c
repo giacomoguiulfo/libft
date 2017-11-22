@@ -1,4 +1,18 @@
-#include <darr.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_darr_init.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/22 14:02:30 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/11/22 14:02:49 by gguiulfo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "darr.h"
+#include "libft.h"
+#include <stdlib.h>
 
 t_darr *ft_darr_init(size_t content_size, size_t initial_size)
 {

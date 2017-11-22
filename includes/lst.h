@@ -6,12 +6,14 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 19:35:03 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/19 17:31:07 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 15:05:00 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LST_H
 # define LST_H
+
+# include <stddef.h>
 
 typedef struct s_list t_list;
 

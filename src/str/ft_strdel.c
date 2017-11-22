@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 15:50:24 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:42:56 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:57:17 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdlib.h>
 
 void	ft_strdel(char **as)
 {

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arr_remove_nth.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/29 17:52:50 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/20 09:43:23 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 13:59:47 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
+#include <stddef.h>
 
 /*
 ** Description:

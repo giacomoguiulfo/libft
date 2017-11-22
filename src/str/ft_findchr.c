@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_findchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 22:01:36 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:34:39 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:53:54 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "str.h"
+#include <stddef.h>
 
 size_t		ft_findchr(const char *s, int c)
 {

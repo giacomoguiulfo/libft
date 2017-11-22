@@ -6,11 +6,13 @@
 /*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/06 11:37:46 by giacomo           #+#    #+#             */
-/*   Updated: 2017/09/06 11:39:25 by giacomo          ###   ########.fr       */
+/*   Updated: 2017/11/22 14:55:59 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "str.h"
+#include "libft.h"
+#include <stddef.h>
 
 char	*ft_str_tolower(char *str)
 {

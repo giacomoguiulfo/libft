@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/12 18:19:15 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:10:49 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:36:02 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "mem.h"
+#include <stdlib.h>
 
 void	ft_swap(void *a, void *b, size_t s)
 {

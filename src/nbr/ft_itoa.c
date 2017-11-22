@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 17:58:13 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:24:58 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:35:31 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "nbr.h"
+#include "libft.h"
 
 char	*ft_itoa(int n)
 {

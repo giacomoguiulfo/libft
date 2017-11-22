@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/31 23:04:55 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:16:16 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:35:03 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdlib.h>
 
 char	*ft_itoa_base(int value, int base)
 {

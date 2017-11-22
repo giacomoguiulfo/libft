@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/11/22 12:51:26 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/11/22 15:11:56 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,12 +29,23 @@ MAKEFLAGS += --no-print-directory
 endif
 
 ARR :=							\
+ft_arr_free 				\
 ft_arr_remove_nth
 CHR :=							\
 ft_putnchar_fd 			\
 ft_putchar_fd 			\
 ft_putchar 					\
-ft_getchar
+ft_getchar					\
+ft_isalnum 					\
+ft_isalpha 					\
+ft_isascii 					\
+ft_isdigit 					\
+ft_isprint 					\
+ft_isspace 					\
+ft_islower 					\
+ft_isupper 					\
+ft_tolower 					\
+ft_toupper
 DARR :=							\
 ft_darr_clear				\
 ft_darr_contract		\
@@ -50,31 +61,23 @@ ft_darr_remove			\
 ft_darr_resize			\
 ft_darr_reverse			\
 ft_darr_set
-FT_CTYPE :=					\
-ft_isalnum 					\
-ft_isalpha 					\
-ft_isascii 					\
-ft_isdigit 					\
-ft_isprint 					\
-ft_isspace 					\
-ft_islower 					\
-ft_isupper 					\
-ft_tolower 					\
-ft_toupper
-FT_ERROR :=					\
+DSTR :=							\
+ft_dstr_append			\
+ft_dstr_free				\
+ft_dstr_nappend			\
+ft_dstr_new					\
+ft_dstr_resize
+ERR :=							\
 ft_usage						\
 ft_error_exit
-FT_HEAP :=					\
-fts_get_heap 				\
-fts_heap_free 			\
-fts_free 						\
-fts_malloc 					\
-fts_memalloc 				\
-fts_realloc
-FT_MATH :=					\
-ft_pow 							\
-ft_sqrtf
-FT_PRINTF_H := 			\
+HEAP :=							\
+ft_heap_singleton 	\
+ft_heap_clear 			\
+ft_hfree 						\
+ft_hmalloc 					\
+ft_hmemalloc 				\
+ft_hrealloc
+PRINTF_P := 					\
 ft_pf_chr_conv 			\
 ft_pf_float_conv 		\
 ft_pf_fmt_parse 		\
@@ -85,45 +88,18 @@ ft_pf_handlers 			\
 ft_pf_str_conv 			\
 ft_pf_wstr_conv 		\
 ft_pf_xou_conv
-FT_PRINTF :=				\
+PRINTF :=						\
 ft_printf 					\
 ft_printf_more
-FT_SORT :=					\
+SORT :=							\
 ft_qsort
-FT_STDLIB :=				\
-ft_atoi 						\
-ft_realloc
-FT_STRING :=				\
-ft_bzero 						\
-ft_memccpy 					\
-ft_memchr 					\
-ft_memcmp 					\
-ft_memcpy 					\
-ft_memmove 					\
-ft_memset 					\
-ft_strcat 					\
-ft_strchr 					\
-ft_strcmp 					\
-ft_strcpy 					\
-ft_strdup 					\
-ft_strlcat 					\
-ft_strlen 					\
-ft_strncat 					\
-ft_strncmp 					\
-ft_strncpy 					\
-ft_strndup 					\
-ft_strnstr 					\
-ft_strrchr 					\
-ft_strstr
-FT_TERM :=					\
+FT_TERM :=							\
 ft_clrscreen 				\
 ft_cursor_goto 			\
 ft_get_win_size 		\
 ft_highlight 				\
 ft_termcmd 					\
 ft_underline
-FT_VECTOR :=				\
-ft_cvector
 GNL :=							\
 get_next_line
 LST	:=							\
@@ -139,12 +115,20 @@ ft_lstmap 					\
 ft_lstnew						\
 ft_lstsize
 MEM :=							\
-ft_free_rows 				\
+ft_bzero 						\
+ft_memccpy 					\
+ft_memchr 					\
+ft_memcmp 					\
+ft_memcpy 					\
+ft_memmove 					\
+ft_memset 					\
 ft_memalloc 				\
 ft_memdel 					\
+ft_realloc					\
 ft_recalloc 				\
 ft_swap
 NBR :=							\
+ft_atoi 						\
 ft_atoi_base 				\
 ft_imaxtoa 					\
 ft_is_sort 					\
@@ -154,11 +138,27 @@ ft_nblen 						\
 ft_putnbr_fd 				\
 ft_putnbr 					\
 ft_range 						\
-ft_uimaxtoa_base
+ft_uimaxtoa_base		\
+ft_pow 							\
+ft_sqrtf
 STR :=							\
+ft_strcat 					\
+ft_strchr 					\
+ft_strcmp 					\
+ft_strcpy 					\
+ft_strdup 					\
+ft_strlcat 					\
+ft_strlen 					\
+ft_strncat 					\
+ft_strncmp 					\
+ft_strncpy 					\
+ft_strndup 					\
+ft_strnstr 					\
+ft_strrchr 					\
+ft_strstr						\
 ft_countwords 			\
 ft_findchr 					\
-ft_free_map 				\
+ft_free_sstr 				\
 ft_insrt_to_str 		\
 ft_putendl_fd 			\
 ft_putendl 					\
@@ -184,17 +184,13 @@ SRC_BASE	:=															\
 $(addprefix arr/, $(ARR))									\
 $(addprefix chr/, $(CHR))									\
 $(addprefix darr/, $(DARR))								\
-$(addprefix ft_ctype/, $(FT_CTYPE))				\
-$(addprefix ft_error/, $(FT_ERROR))				\
-$(addprefix ft_heap/, $(FT_HEAP))					\
-$(addprefix ft_math/, $(FT_MATH))					\
-$(addprefix ft_printf/, $(FT_PRINTF_H))		\
-$(addprefix ft_printf/, $(FT_PRINTF))			\
-$(addprefix sort/, $(FT_SORT))						\
-$(addprefix ft_stdlib/, $(FT_STDLIB))			\
-$(addprefix ft_string/, $(FT_STRING))			\
-$(addprefix ft_term/, $(FT_TERM))					\
-$(addprefix vector/, $(FT_VECTOR))				\
+$(addprefix dstr/, $(DSTR))				\
+$(addprefix err/, $(ERR))				\
+$(addprefix heap/, $(HEAP))					\
+$(addprefix printf/, $(PRINTF_P))		\
+$(addprefix printf/, $(PRINTF))			\
+$(addprefix sort/, $(SORT))						\
+$(addprefix term/, $(FT_TERM))					\
 $(addprefix gnl/, $(GNL))									\
 $(addprefix lst/, $(LST))									\
 $(addprefix mem/, $(MEM))									\

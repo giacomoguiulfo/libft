@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_recalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/06 16:36:26 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:10:40 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:35:56 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "mem.h"
+#include <stdlib.h>
 
 void	*ft_recalloc(void *ptr, size_t src_size, size_t new_size)
 {

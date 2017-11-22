@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/04 22:09:33 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/05/27 08:19:56 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:18:24 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "lst.h"
+#include "libft.h"
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {

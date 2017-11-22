@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_uimaxtoa_base.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/06 15:20:33 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:25:42 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:38:27 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdint.h>
+#include <stdlib.h>
 
 char	*ft_uimaxtoa_base(uintmax_t value, int8_t base, const char *str)
 {

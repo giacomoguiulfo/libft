@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstfind.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 06:01:09 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/23 06:01:40 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:23:34 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "lst.h"
+#include <stddef.h>
 
 t_list			*ft_lstfind(t_list *begin_list, void *data, int (*cmp)())
 {

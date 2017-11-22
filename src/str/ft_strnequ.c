@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 16:37:51 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:45:50 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:59:09 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stddef.h>
 
 int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {

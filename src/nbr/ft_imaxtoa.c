@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_imaxtoa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/03 20:34:09 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/06 16:41:52 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:34:38 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdint.h>
+#include <stdlib.h>
 
 char	*ft_imaxtoa(intmax_t value)
 {

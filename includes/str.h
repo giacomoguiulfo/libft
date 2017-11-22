@@ -6,16 +6,18 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 20:27:34 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/09/06 11:41:12 by giacomo          ###   ########.fr       */
+/*   Updated: 2017/11/22 15:03:41 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STR_H
 # define STR_H
 
+#include <stddef.h>
+
 int		ft_countwords(char const *s, char c);
 size_t	ft_findchr(const char *s, int c);
-void	ft_free_map(char **map);
+void	ft_free_sstr(char **map);
 void	ft_insrt_to_str(char **s1, char *s2);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putendl(char const *s);
@@ -36,5 +38,21 @@ char	*ft_strrev(char *str);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s);
+
+char	*ft_strcat(char *s1, const char *s2);
+char	*ft_strchr(const char *s, int c);
+int		ft_strcmp(const char *s1, const char *s2);
+char	*ft_strcpy(char *dst, const char *src);
+char	*ft_strdup(const char *s1);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlen(const char *s);
+char	*ft_strncat(char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strncpy(char *dst, const char *src, size_t len);
+char	*ft_strndup(const char *src, size_t len);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*ft_strrchr(const char *s, int c);
+char	*ft_strstr(const char *big, const char *little);
+
 
 #endif

@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   darr.h                                            :+:      :+:    :+:   */
+/*   darr.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/25 01:30:18 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/20 10:33:14 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 13:58:01 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DARR_H
 # define DARR_H
 
-# include "libft.h"
+# include <stddef.h>
 
 # define DARR_EXPAND_RATE 300
 # define FT_DARR_LAST(a) ((a)->content[(a)->len - 1])

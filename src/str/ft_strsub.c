@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 16:44:59 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:48:17 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 15:01:10 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "str.h"
+#include <stddef.h>
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
