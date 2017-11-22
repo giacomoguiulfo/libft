@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 19:51:00 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/20 10:23:30 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 11:16:36 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@
 
 int	ft_putchar_fd(int c, int fd)
 {
-	return (write(fd, &c, 1));
+	return ((int)write(fd, &c, 1));
 }
