@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 13:59:02 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 22:22:56 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "darr.h"
 # include "dstr.h"
 # include "err.h"
+# include "ft_term.h"
 # include "gnl.h"
 # include "heap.h"
 # include "lst.h"
@@ -25,8 +26,9 @@
 # include "nbr.h"
 # include "printf.h"
 # include "sort.h"
+# include "sstr.h"
 # include "str.h"
-# include "term.h"
+# include "sys.h"
 
 # ifndef DEBUG
 #  define DG_1			"%{bblue}%s, %{bcyan}%s, %{bgreen}%4d - %{bred}"
@@ -44,6 +46,12 @@
 # define FAILED (-1)
 # define SUCCESS (0)
 # define SQUARE(a) ((a) * (a))
+
+typedef struct	s_strfmap
+{
+	char	*name;
+	int		(*f)();
+}				t_strfmap;
 
 # define ASC_BRED	"\033[31;1m"
 # define ASC_EOC	"\033[0m"
