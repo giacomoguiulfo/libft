@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/25 01:30:18 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 13:58:01 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 15:54:50 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int					ft_darr_contract(t_darr *array);
 void				ft_darr_destroy(t_darr *array);
 int					ft_darr_expand(t_darr *array);
 void				*ft_darr_get(t_darr *array, int i);
-t_darr				*ft_darr_init(size_t content_size, size_t initial_size);
+t_darr			*ft_darr_init(size_t content_size, size_t initial_size);
 void				ft_darr_kill(t_darr *array);
 void				*ft_darr_new(t_darr *array);
 void				*ft_darr_pop(t_darr *array);

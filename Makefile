@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/11/22 15:11:56 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/11/22 16:17:12 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ ft_hfree 						\
 ft_hmalloc 					\
 ft_hmemalloc 				\
 ft_hrealloc
-PRINTF_P := 					\
+PRINTF_P := 				\
 ft_pf_chr_conv 			\
 ft_pf_float_conv 		\
 ft_pf_fmt_parse 		\
@@ -93,7 +93,7 @@ ft_printf 					\
 ft_printf_more
 SORT :=							\
 ft_qsort
-FT_TERM :=							\
+FT_TERM :=					\
 ft_clrscreen 				\
 ft_cursor_goto 			\
 ft_get_win_size 		\
