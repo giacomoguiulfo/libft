@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sstr.h                                             :+:      :+:    :+:   */
+/*   ftopts.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 21:35:43 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/25 01:41:40 by giacomo          ###   ########.fr       */
+/*   Created: 2017/11/25 00:17:11 by giacomo           #+#    #+#             */
+/*   Updated: 2017/11/25 00:22:49 by giacomo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SSTR_H
-# define SSTR_H
+#ifndef FTOPTS_H
+# define FTOPTS_H
 
-void    ft_sstrdel(char **sstr, int index);
-char	**ft_sstrdup(char **sstr);
-char    **ft_sstrpush(char **sstr, char *str);
-void	ft_sstrputs(char **sstr);
+# include "ft_getopts.h"
+
+int ftopts_short(char ***av, t_ftopts opts_map[], void *data);
+int ftopts_long(char ***av, t_ftopts opts_map[], void *data);
 
 #endif

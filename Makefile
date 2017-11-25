@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/11/22 21:47:59 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/11/25 01:41:57 by giacomo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,9 @@ ft_dstr_resize
 ERR :=						\
 ft_usage					\
 ft_error_exit
+FT_GETOPTS :=				\
+ft_getopts					\
+ftopts
 HEAP :=						\
 ft_heap_singleton 			\
 ft_heap_clear 				\
@@ -142,7 +145,9 @@ ft_uimaxtoa_base			\
 ft_pow 						\
 ft_sqrtf
 SSTR :=						\
+ft_sstrdel					\
 ft_sstrdup					\
+ft_sstrpush					\
 ft_sstrputs
 STR :=						\
 ft_strcat 					\
@@ -192,6 +197,7 @@ $(addprefix chr/, $(CHR))									\
 $(addprefix darr/, $(DARR))									\
 $(addprefix dstr/, $(DSTR))									\
 $(addprefix err/, $(ERR))									\
+$(addprefix ft_getopts/, $(FT_GETOPTS))						\
 $(addprefix ft_term/, $(FT_TERM))							\
 $(addprefix gnl/, $(GNL))									\
 $(addprefix heap/, $(HEAP))									\

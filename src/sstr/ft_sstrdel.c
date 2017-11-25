@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sstr.h                                             :+:      :+:    :+:   */
+/*   ft_sstrdel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 21:35:43 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/25 01:41:40 by giacomo          ###   ########.fr       */
+/*   Created: 2017/11/25 01:35:21 by giacomo           #+#    #+#             */
+/*   Updated: 2017/11/25 01:42:37 by giacomo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SSTR_H
-# define SSTR_H
+#include "libft.h"
 
-void    ft_sstrdel(char **sstr, int index);
-char	**ft_sstrdup(char **sstr);
-char    **ft_sstrpush(char **sstr, char *str);
-void	ft_sstrputs(char **sstr);
+void ft_sstrdel(char **sstr, int index)
+{
+    int i;
 
-#endif
+    ft_strdel(&sstr[index]);
+    i = index;
+    while (sstr[i] || i == index)
+    {
+        sstr[i] = sstr[i + 1];
+        i++;
+    }
+}

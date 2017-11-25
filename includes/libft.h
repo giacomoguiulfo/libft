@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 22:22:56 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/25 02:54:24 by giacomo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "darr.h"
 # include "dstr.h"
 # include "err.h"
+# include "ft_getopts.h"
 # include "ft_term.h"
 # include "gnl.h"
 # include "heap.h"
