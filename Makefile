@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/11/25 01:41:57 by giacomo          ###   ########.fr        #
+#    Updated: 2017/11/25 04:28:14 by giacomo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -214,9 +214,9 @@ $(addprefix sys/, $(SYS))
 INC_DIR		:= includes/
 OBJ_DIR		:= obj/
 SRC_DIR		:= src/
-SRC				:= $(addprefix $(SRC_DIR)/, $(addsuffix .c, $(SRC_BASE)))
-OBJ				:= $(patsubst $(SRC_DIR)/%, $(OBJ_DIR)/%, $(SRC:.c=.o))
-INC_BASE	:= $(wildcard $(INC_DIR)/*.h)
+SRC				:= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_BASE)))
+OBJ				:= $(patsubst $(SRC_DIR)%, $(OBJ_DIR)%, $(SRC:.c=.o))
+INC_BASE	:= $(wildcard $(INC_DIR)*.h)
 SHELL			:= /bin/bash
 BASENAME  := `basename -s .a $(NAME)`
 LEN_NAME	= `printf "%s" $(NAME) | wc -c`
