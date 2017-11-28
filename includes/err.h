@@ -6,13 +6,14 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/21 08:58:55 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/28 04:01:24 by giacomo          ###   ########.fr       */
+/*   Updated: 2017/11/28 10:34:57 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERR_H
 # define ERR_H
 
+# include "libft.h"
 # include <unistd.h>
 
 # define STDIN  STDIN_FILENO
@@ -22,6 +23,7 @@
 extern char **g_argv;
 
 void	ft_error_exit(const char *str);
+int		ft_perror(char *name);
 void	ft_usage(char const *name, char const *str);
 
 #endif

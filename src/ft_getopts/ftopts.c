@@ -6,7 +6,7 @@
 /*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 00:11:15 by giacomo           #+#    #+#             */
-/*   Updated: 2017/11/25 00:21:38 by giacomo          ###   ########.fr       */
+/*   Updated: 2017/11/28 09:54:24 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int             ftopts_long(char ***av, t_ftopts opts_map[], void *data)
     ((t_ftopts_data*)data)->flags &= ~opt->flags_off;
     if (opt->getopt)
     {
+		arg = NULL;
         if (opt->arg_required && !(arg = getopt_arg(av, NULL)))
             return (1);
         if (opt->getopt(arg, data))

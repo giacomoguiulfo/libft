@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/11/28 06:57:18 by giacomo          ###   ########.fr        #
+#    Updated: 2017/11/28 10:30:16 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,8 +68,9 @@ ft_dstr_nappend				\
 ft_dstr_new					\
 ft_dstr_resize
 ERR :=						\
-ft_usage					\
-ft_error_exit
+ft_error_exit				\
+ft_perror					\
+ft_usage
 FT_GETOPTS :=				\
 ft_getopts					\
 ftopts
