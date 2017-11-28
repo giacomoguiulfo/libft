@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 21:45:34 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 21:46:01 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/28 05:45:58 by giacomo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define SYS_H
 
 char *ft_getenv(char **env, char *key);
+int	ft_isdir(const char *path);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/11/25 04:28:14 by giacomo          ###   ########.fr        #
+#    Updated: 2017/11/28 06:57:18 by giacomo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -177,6 +177,7 @@ ft_str_tolower				\
 ft_strclr					\
 ft_strdel 					\
 ft_strequ 					\
+ft_stris					\
 ft_striter 					\
 ft_striteri 				\
 ft_strjoin 					\
@@ -189,7 +190,8 @@ ft_strsplit 				\
 ft_strsub 					\
 ft_strtrim
 SYS :=						\
-ft_getenv
+ft_getenv					\
+ft_isdir
 
 SRC_BASE	:=												\
 $(addprefix arr/, $(ARR))									\

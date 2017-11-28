@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 20:27:34 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 21:48:05 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/28 06:55:51 by giacomo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char	*ft_str_tolower(char *str);
 void	ft_strclr(char *s);
 void	ft_strdel(char **as);
 int		ft_strequ(char const *s1, char const *s2);
+int     ft_stris(char *str, int (*f)(int));
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strjoin(char const *s1, char const *s2);

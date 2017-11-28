@@ -6,17 +6,17 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 20:49:21 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 13:36:06 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/28 06:42:56 by giacomo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHR_H
 # define CHR_H
 
-void	ft_putnchar_fd(int c, int n, int fd);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putchar(char c);
-int		ft_getchar(void);
+int	ft_putnchar_fd(int c, int n, int fd);
+int	ft_putchar_fd(int c, int fd);
+int	ft_putchar(int c);
+int	ft_getchar(void);
 
 # define ISALPHA(a) (((unsigned)a | 32) - 97 < 26u)
 # define ISASCII(a) ((unsigned)a < 128u)

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error_exit.c                                    :+:      :+:    :+:   */
+/*   ft_isdir.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/21 08:56:24 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/28 04:02:17 by giacomo          ###   ########.fr       */
+/*   Created: 2017/11/28 05:43:38 by giacomo           #+#    #+#             */
+/*   Updated: 2017/11/28 05:44:40 by giacomo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include <sys/stat.h>
 #include <unistd.h>
 
-char	**g_argv;
-
-void	ft_error_exit(const char *str)
+int	ft_isdir(const char *path)
 {
-	ft_dprintf(STDERR_FILENO, "%{bred}Error: %s%{eoc}\n", str);
-	exit(EXIT_FAILURE);
+	struct stat	sb;
+
+	if (stat(path, &sb))
+		return (0);
+	return (S_ISDIR(sb.st_mode));
 }
