@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/11/28 11:50:12 by gguiulfo         ###   ########.fr        #
+#    Created: 2017/11/28 19:10:11 by gguiulfo          #+#    #+#              #
+#    Updated: 2017/11/28 19:10:19 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -117,6 +117,7 @@ ft_lstfind 					\
 ft_lstiter 					\
 ft_lstmap 					\
 ft_lstnew					\
+ft_lstreverse				\
 ft_lstsize
 MEM :=						\
 ft_bzero 					\
