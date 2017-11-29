@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   err.h                                              :+:      :+:    :+:   */
+/*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/21 08:58:55 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/28 10:34:57 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/28 11:51:26 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERR_H
-# define ERR_H
+#ifndef ERROR_H
+# define ERROR_H
 
 # include "libft.h"
-# include <unistd.h>
 
-# define STDIN  STDIN_FILENO
-# define STDOUT STDOUT_FILENO
-# define STDERR STDERR_FILENO
-
-extern char **g_argv;
+extern char		**g_argv;
 
 void	ft_error_exit(const char *str);
 int		ft_perror(char *name);

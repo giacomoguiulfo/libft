@@ -6,11 +6,13 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 10:27:55 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/28 10:29:41 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/28 15:34:59 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	**g_argv;
+#include "error.h"
+
+char	**g_argv = NULL;
 
 int		ft_perror(char *name)
 {
