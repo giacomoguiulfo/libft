@@ -23,6 +23,6 @@ void	ft_dstr_resize(t_dstr *dstr, size_t min)
 	mllc_size = dstr->cap;
 	while (mllc_size < min)
 		mllc_size *= 2;
-	dstr->data = (char *)ft_recalloc(dstr->data, dstr->len, mllc_size);
+	dstr->data = (char *)ft_memrealloc(dstr->data, dstr->len, mllc_size);
 	dstr->cap = mllc_size;
 }

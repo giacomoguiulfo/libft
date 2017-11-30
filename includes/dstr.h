@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 21:39:12 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 15:06:08 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/29 14:17:21 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 
 # include <stddef.h>
 
+# define FT_DSTR_INDEX(d, i) ((d).data[(i)])
+
 typedef struct	s_dstr
 {
 	size_t				len;
 	size_t				cap;
-	char					*data;
-}								t_dstr;
+	char				*data;
+}				t_dstr;
 
 int				ft_dstr_new(t_dstr *dstr, size_t init_cap);
 void			ft_dstr_append(t_dstr *dstr, char *newdata);

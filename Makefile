@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/28 19:10:11 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/11/28 19:10:19 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/11/30 08:18:29 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,17 +110,24 @@ LST	:=						\
 ft_lst						\
 ft_lstadd 					\
 ft_lstappend				\
-ft_lstdelnode 				\
+ft_lstdel_if				\
 ft_lstdel 					\
+ft_lstdelnode 				\
 ft_lstdelone 				\
 ft_lstfind 					\
+ft_lstfree					\
 ft_lstiter 					\
+ft_lstlast					\
 ft_lstmap 					\
 ft_lstnew					\
+ft_lstpop_int				\
+ft_lstpush_int				\
 ft_lstreverse				\
 ft_lstsize
 MEM :=						\
+ft_addrcmp					\
 ft_bzero 					\
+ft_crealloc					\
 ft_memccpy 					\
 ft_memchr 					\
 ft_memcmp 					\
@@ -130,7 +137,7 @@ ft_memset 					\
 ft_memalloc 				\
 ft_memdel 					\
 ft_realloc					\
-ft_recalloc 				\
+ft_memrealloc 				\
 ft_swap
 NBR :=						\
 ft_atoi 					\

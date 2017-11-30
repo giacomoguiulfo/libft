@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dstr_nappend.c                                  :+:      :+:    :+:   */
+/*   ft_lstpop_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 13:22:26 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/29 13:15:01 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/11/30 02:24:43 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/11/30 04:32:17 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dstr.h"
 #include "libft.h"
-#include <stddef.h>
 
-void	ft_dstr_nappend(t_dstr *dstr, char *newdata, size_t n)
+int	ft_lstpop_int(t_list **stack)
 {
-	size_t nd_len;
+	t_list	*top;
+	int		elem;
 
-	if (n == 0 || !newdata || !newdata[0])
-		return ;
-	nd_len = n;
-	if (dstr->cap < dstr->len + nd_len)
-		ft_dstr_resize(dstr, dstr->len + nd_len);
-	ft_memcpy(dstr->data + dstr->len, newdata, nd_len);
-	dstr->len += nd_len;
+	if (!(stack && *stack))
+		return (0);
+	top = *stack;
+	elem = top ? *(int *)top->content : 0;
+	*stack = (*stack)->next;
+	ft_lstdelone(&top, ft_lstfree);
+	return (elem);
+
 }

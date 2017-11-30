@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dstr_nappend.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 13:22:26 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/29 13:15:01 by gguiulfo         ###   ########.fr       */
+/*   Created: 2017/11/30 06:46:46 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/11/30 06:49:34 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dstr.h"
-#include "libft.h"
-#include <stddef.h>
+#include "lst.h"
 
-void	ft_dstr_nappend(t_dstr *dstr, char *newdata, size_t n)
+t_list *ft_lstlast(t_list *lst)
 {
-	size_t nd_len;
-
-	if (n == 0 || !newdata || !newdata[0])
-		return ;
-	nd_len = n;
-	if (dstr->cap < dstr->len + nd_len)
-		ft_dstr_resize(dstr, dstr->len + nd_len);
-	ft_memcpy(dstr->data + dstr->len, newdata, nd_len);
-	dstr->len += nd_len;
+	if (lst)
+		while (lst->next)
+			lst = lst->next;
+	return (lst);
 }
