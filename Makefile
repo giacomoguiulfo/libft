@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/28 19:10:11 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/11/30 08:18:29 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/12/01 05:49:31 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ endif
 ARR :=						\
 ft_arr_free 				\
 ft_arr_remove_nth
+BTREE :=					\
+ft_btreenew
 CHR :=						\
 ft_putnchar_fd 				\
 ft_putchar_fd 				\
@@ -204,6 +206,7 @@ ft_isdir
 
 SRC_BASE	:=												\
 $(addprefix arr/, $(ARR))									\
+$(addprefix btree/, $(BTREE))								\
 $(addprefix chr/, $(CHR))									\
 $(addprefix darr/, $(DARR))									\
 $(addprefix dstr/, $(DSTR))									\

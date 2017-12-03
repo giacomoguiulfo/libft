@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/31 23:28:43 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 15:19:29 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/01 05:47:09 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ int		ft_strprintf(char **ret, const char *format, va_list ap)
 	t_info		pfinfo;
 
 	ft_pfinfo_init(&pfinfo);
-	if (ft_dstr_new(&dstr, ft_strlen(format) + 50) == FAILED)
-		return (FAILED);
+	if (ft_dstr_new(&dstr, ft_strlen(format) + 50) == -1)
+		return (-1);
 	while (*format)
 	{
 		i = 0;

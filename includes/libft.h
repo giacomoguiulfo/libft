@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/28 11:50:35 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/01 06:40:15 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 # define LIBFT_H
 
 # include "arr.h"
+# include "btree.h"
 # include "chr.h"
 # include "darr.h"
+# include "dlst.h"
 # include "dstr.h"
 # include "error.h"
 # include "ft_getopts.h"
@@ -44,8 +46,8 @@
 # define MAX(a, b) (((a) > (b)) ? (a) : (b))
 # define MIN(a, b) (((a) < (b)) ? (a) : (b))
 # define DIFF(a, b) ((a) < (b) ? -1 : (a) > (b))
-# define FAILED (-1)
-# define SUCCESS (0)
+// # define FAILED (-1)
+// # define SUCCESS (0)
 # define SQUARE(a) ((a) * (a))
 
 typedef struct	s_strfmap
