@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/08/21 09:02:39 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 06:04:07 by giacomo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@
 # define FAILED (-1)
 # define SUCCESS (0)
 # define SQUARE(a) ((a) * (a))
+// # define RETURN(x) (1;return(x);) 
 
 # define ASC_BRED	"\033[31;1m"
 # define ASC_EOC	"\033[0m"
