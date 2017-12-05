@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   darr_init.c                                       :+:      :+:    :+:   */
+/*   ft_darr_resize.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/25 01:33:21 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/06/20 10:42:46 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:05:04 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <darr.h>
+#include "darr.h"
+#include "libft.h"
+#include <stddef.h>
 
 int	ft_darr_resize(t_darr *array, size_t newsize)
 {

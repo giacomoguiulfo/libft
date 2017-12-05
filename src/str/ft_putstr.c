@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 17:45:34 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:41:26 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:55:35 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "str.h"
+#include <unistd.h>
 
 void	ft_putstr(char const *s)
 {
 	if (s)
-		write(1, s, ft_strlen(s));
+		write(STDOUT_FILENO, s, ft_strlen(s));
 }

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_insrt_to_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 23:34:53 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/06 16:44:35 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:54:02 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "str.h"
+#include <stdlib.h>
 
 void	ft_insrt_to_str(char **s1, char *s2)
 {

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gguiulfo <gguiulfo@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 17:15:37 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/04/15 20:47:49 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/11/22 15:00:40 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "str.h"
+#include <stdlib.h>
 
 static	int		ft_wordlen(char const *s, char c)
 {
@@ -59,7 +60,7 @@ char			**ft_strsplit(char const *s, char c)
 	{
 		if ((str[i] = ft_strnew(ft_wordlen(s + index, c))) == 0)
 		{
-			ft_free_map(str);
+			ft_free_sstr(str);
 			return (0);
 		}
 		ft_wordcpy(str[i], s + index, c, &index);
