@@ -70,9 +70,9 @@ ft_dstr_nappend				\
 ft_dstr_new					\
 ft_dstr_resize
 ERR :=						\
-ft_perror
-# ft_error_exit
-# ft_usage
+ft_perror					\
+ft_error_exit			\
+ft_usage
 FT_GETOPTS :=				\
 ft_getopts					\
 ftopts
@@ -109,6 +109,7 @@ ft_underline
 GNL :=						\
 get_next_line
 LST	:=						\
+ft_lst						\
 ft_lstadd 					\
 ft_lstappend				\
 ft_lstdel_if				\
