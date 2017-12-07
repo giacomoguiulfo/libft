@@ -6,14 +6,14 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 01:44:44 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/12/01 05:50:33 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/07 13:35:20 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "btree.h"
 #include <stddef.h>
 
-t_btree *ft_btreenew(void const *content, size_t content_size)
+t_btree	*ft_btreenew(void const *content, size_t content_size)
 {
 	t_btree *new;
 

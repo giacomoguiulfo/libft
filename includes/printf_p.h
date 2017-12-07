@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 21:19:02 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 15:12:31 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/07 13:51:11 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft.h"
 # include <stdint.h>
 # include <stdarg.h>
-# include <stdbool.h> 
+# include <stdbool.h>
 
 # define SPECTOTAL 18
 # define IS_X(a) (((unsigned)a | 32) - 97 == 23u)

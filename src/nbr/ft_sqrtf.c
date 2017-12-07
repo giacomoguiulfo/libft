@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/08 15:51:59 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 14:37:55 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/07 13:37:36 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Equivalent of libm's sqrtf() function, man sqrtf(3).
 */
 
-float ft_sqrtf(float x)
+float	ft_sqrtf(float x)
 {
 	float ret;
 

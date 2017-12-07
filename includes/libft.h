@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/12/05 04:14:42 by giacomo          ###   ########.fr       */
+/*   Updated: 2017/12/07 13:35:41 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,8 @@
 # define MAX(a, b) (((a) > (b)) ? (a) : (b))
 # define MIN(a, b) (((a) < (b)) ? (a) : (b))
 # define DIFF(a, b) ((a) < (b) ? -1 : (a) > (b))
-// # define FAILED (-1)
-// # define SUCCESS (0)
 # define SQUARE(a) ((a) * (a))
-// # define RETURN(x) (1;return(x);)
+# define BRK(a) { a; break ; }
 
 typedef struct	s_strfmap
 {

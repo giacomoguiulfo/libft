@@ -6,14 +6,18 @@
 /*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 06:50:50 by giacomo           #+#    #+#             */
-/*   Updated: 2017/11/28 06:54:41 by giacomo          ###   ########.fr       */
+/*   Updated: 2017/12/07 13:41:38 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int    ft_stris(char *str, int (*f)(int))
+int	ft_stris(char *str, int (*f)(int))
 {
-    while (*str)
-        if (!f(*str++))
-            return (0);
-    return (1);
+	while (*str)
+	{
+		if (!f(*str++))
+		{
+			return (0);
+		}
+	}
+	return (1);
 }

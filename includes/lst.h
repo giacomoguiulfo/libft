@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 19:35:03 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/12/05 04:15:02 by giacomo          ###   ########.fr       */
+/*   Updated: 2017/12/07 13:50:35 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stddef.h>
 
-typedef struct s_list t_list;
+typedef struct s_list	t_list;
 
 struct		s_list
 {
@@ -39,9 +39,7 @@ void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list		*ft_lstlast(t_list *lst);
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list		*ft_lstnew(void const *content, size_t content_size);
-t_list  	*ft_lstreverse(t_list **head);
-int			ft_lstpop_int(t_list **stack);
-t_list		*ft_lstpush_int(t_list **stack, int elem);
+t_list		*ft_lstreverse(t_list **head);
 int			ft_lstsize(t_list *lst);
 
 #endif

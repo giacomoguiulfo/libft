@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/12/05 04:15:56 by giacomo          ###   ########.fr        #
+#    Updated: 2017/12/07 13:40:54 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,8 +122,6 @@ ft_lstiter 					\
 ft_lstlast					\
 ft_lstmap 					\
 ft_lstnew					\
-ft_lstpop_int				\
-ft_lstpush_int				\
 ft_lstreverse				\
 ft_lstsize
 MEM :=						\

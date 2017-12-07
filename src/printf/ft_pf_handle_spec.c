@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/31 23:28:43 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/12/01 05:47:09 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/07 13:31:15 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,9 @@ void	ft_handle_spec(t_dstr *dstr, const char **format,
 
 int		ft_strprintf(char **ret, const char *format, va_list ap)
 {
-	size_t		i;
+	size_t	i;
 	t_dstr	dstr;
-	t_info		pfinfo;
+	t_info	pfinfo;
 
 	ft_pfinfo_init(&pfinfo);
 	if (ft_dstr_new(&dstr, ft_strlen(format) + 50) == -1)

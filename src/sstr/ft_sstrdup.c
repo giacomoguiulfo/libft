@@ -6,17 +6,17 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 21:33:34 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 21:34:28 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/07 13:33:15 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-char **ft_sstrdup(char **sstr)
+char	**ft_sstrdup(char **sstr)
 {
-	size_t size;
-	char **ret;
+	size_t	size;
+	char	**ret;
 
 	if (!sstr || !*sstr)
 		return (NULL);

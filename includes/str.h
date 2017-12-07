@@ -6,14 +6,14 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 20:27:34 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/28 06:55:51 by giacomo          ###   ########.fr       */
+/*   Updated: 2017/12/07 13:47:59 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STR_H
 # define STR_H
 
-#include <stddef.h>
+# include <stddef.h>
 
 int		ft_countwords(char const *s, char c);
 size_t	ft_findchr(const char *s, int c);
@@ -27,7 +27,7 @@ char	*ft_str_tolower(char *str);
 void	ft_strclr(char *s);
 void	ft_strdel(char **as);
 int		ft_strequ(char const *s1, char const *s2);
-int     ft_stris(char *str, int (*f)(int));
+int		ft_stris(char *str, int (*f)(int));
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -39,7 +39,6 @@ char	*ft_strrev(char *str);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s);
-
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strchr(const char *s, int c);
 int		ft_strcmp(const char *s1, const char *s2);
@@ -55,6 +54,5 @@ char	*ft_strndup(const char *src, size_t len);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *big, const char *little);
-
 
 #endif
