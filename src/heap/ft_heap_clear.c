@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 21:04:59 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 14:13:10 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/13 12:17:23 by giacomo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int		ft_heap_clear(void)
 		free(memnode);
 		memnode = next;
 	}
-	free(heap_man);
+	heap_man->first = NULL;
+	heap_man->last = NULL;
+	// free(heap_man); TODO: Why remove this?
 	return (0);
 }

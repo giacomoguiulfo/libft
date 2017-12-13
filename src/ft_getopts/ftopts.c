@@ -77,6 +77,7 @@ int				ftopts_short(char ***av, t_ftopts opts_map[], void *data)
 		((t_ftopts_data *)data)->flags &= ~opt->flags_off;
 		if (opt->getopt)
 		{
+			(void)arg;
 			return (42);
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 21:06:10 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/11/22 15:05:22 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/13 12:19:12 by giacomo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,14 @@ int				ft_heap_clear(void);
 */
 
 t_heap_man		*ft_heap_singleton(void);
+
+/*
+** HSTR functions
+*/
+
+
+
+char			*ft_hstrdup(char *hstr);
+char			*ft_hstrndup(char *hstr, size_t size);
 
 #endif

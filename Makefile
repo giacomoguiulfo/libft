@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/12/07 13:40:54 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/12/13 12:22:28 by giacomo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,9 @@ ft_heap_clear 				\
 ft_hfree 					\
 ft_hmalloc 					\
 ft_hmemalloc 				\
-ft_hrealloc
+ft_hrealloc					\
+ft_hstrdup					\
+ft_hstrndup
 PRINTF_P := 				\
 ft_pf_chr_conv 				\
 ft_pf_float_conv 			\
