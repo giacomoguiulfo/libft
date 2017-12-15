@@ -51,7 +51,7 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# OS Generated Files
+# MacOS files
 .DS_Store
 .DS_Store?
 ._*
@@ -60,10 +60,10 @@ dkms.conf
 ehthumbs.db
 Thumbs.db
 
-# Vim Backup Files #
+# Vim backup files
 *.swp
 *.swo
 
-# Clion Files #
+# Clion files
 .idea/
 cmake-build-debug/
