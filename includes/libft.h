@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:04:23 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/12/07 13:35:41 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/16 18:42:38 by giacomo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@
 # include "str.h"
 # include "sys.h"
 
-# ifndef DEBUG
+# if DEBUG
 #  define DG_1			"%{bblue}%s, %{bcyan}%s, %{bgreen}%4d - %{bred}"
 #  define DG_2		__FILE__, __func__, __LINE__
-#  define DEBUG(f, ...)	ft_dprintf(2, DG_1 f "%{eoc}\n", DG_2, ##__VA_ARGS__)
+#  define DBG(f, ...)	ft_dprintf(2, DG_1 f "%{eoc}\n", DG_2, ##__VA_ARGS__)
+# else
+#  define DBG(f, ...) ((void)f)
 # endif
 
 # define ABS(a) ((a) * (((a) > 0) * 2 - 1))

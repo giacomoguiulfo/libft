@@ -6,23 +6,26 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/12/13 12:22:28 by giacomo          ###   ########.fr        #
+#    Updated: 2017/12/16 18:41:32 by giacomo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= libft.a
 
+DEBUG		:= 0
+
 CC			?= gcc
 CFLAGS		+= -std=c99
 CFLAGS		+= -Wall -Wextra -Werror
+CFLAGS		+= -DDEBUG=${DEBUG}
 # CFLAGS		+= -Wall -Wextra -Werror -Wfloat-equal -Wundef
 # CFLAGS		+= -Wpointer-arith -Wunreachable-code -Winit-self
 # CFLAGS		+= -O3 -march=native -pipe -flto
 
-DEBUG		:= 0
-ifeq ($(DEBUG),1)
-CFLAGS		+= -g -fsanitize=address
-endif
+# DEBUG		:= 0
+# ifeq ($(DEBUG),1)
+# CFLAGS		+= -g -fsanitize=address
+# endif
 
 ifndef VERBOSE
 MAKEFLAGS	+= --no-print-directory
