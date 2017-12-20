@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/12/16 18:41:32 by giacomo          ###   ########.fr        #
+#    Updated: 2017/12/19 20:05:31 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -164,6 +164,7 @@ ft_sstrdup					\
 ft_sstrpush					\
 ft_sstrputs
 STR :=						\
+ft_basename					\
 ft_strcat 					\
 ft_strchr 					\
 ft_strcmp 					\

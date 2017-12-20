@@ -6,7 +6,7 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 20:27:34 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/12/07 13:47:59 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/19 20:05:02 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 
+char	*ft_basename(const char *path);
 int		ft_countwords(char const *s, char c);
 size_t	ft_findchr(const char *s, int c);
 void	ft_free_sstr(char **map);
