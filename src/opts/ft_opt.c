@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftopts.c                                           :+:      :+:    :+:   */
+/*   ft_opt.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 00:11:15 by giacomo           #+#    #+#             */
-/*   Updated: 2017/12/19 21:33:11 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/21 01:01:04 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,32 +26,11 @@ static char		*getopt_arg(char ***av, char *arg)
 	return (ret);
 }
 
-static t_opt	*ft_optmap_short(t_opt opt_map[], char c)
+static int			ft_invalid_optarg(t_opts *opts, t_opt *opt, char *opt_arg, bool help)
 {
-	int	i;
-
-	i = 0;
-	while (opt_map[i].c)
-	{
-		if (opt_map[i].c == c)
-			return (&opt_map[i]);
-		i++;
-	}
-	return (NULL);
-}
-
-static t_opt	*ft_optmap_long(t_opt opt_map[], char *name)
-{
-	int	i;
-
-	i = 0;
-	while (opt_map[i].c)
-	{
-		if (ft_strequ(opt_map[i].name, name))
-			return (&opt_map[i]);
-		i++;
-	}
-	return (NULL);
+	ft_dprintf(STDERR_FILENO, "%s %s [%s]\n", prog, opt->name, opts->metavar);
+	if (opts->help)
+		ft_opts_suggest_help();
 }
 
 static inline void load_flag(void *data, t_opt *opt)

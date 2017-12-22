@@ -6,7 +6,7 @@
 /*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 00:14:17 by giacomo           #+#    #+#             */
-/*   Updated: 2017/12/19 21:14:31 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/21 01:08:11 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct	s_opts
 	char		*prog;
 	char		*description;
 	char		*epilog;
+	char		**argv;
 	int			help:1;
 	int			usage:1;
 	int			required_opts:1;

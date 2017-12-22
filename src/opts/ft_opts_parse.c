@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftopts.h                                           :+:      :+:    :+:   */
+/*   ft_opts_parse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/25 00:17:11 by giacomo           #+#    #+#             */
-/*   Updated: 2017/11/25 00:22:49 by giacomo          ###   ########.fr       */
+/*   Created: 2017/12/21 01:01:46 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/12/21 01:09:49 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTOPTS_H
-# define FTOPTS_H
+#include "opts.h"
 
-# include "ft_getopts.h"
-
-int ftopts_short(char ***av, t_ftopts opts_map[], void *data);
-int ftopts_long(char ***av, t_ftopts opts_map[], void *data);
-
-#endif
+void	ft_opts_parse(t_opts *opts, void *data)
+{
+	((t_optparse *)data)->argv = opts->argv;
+}

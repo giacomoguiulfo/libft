@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getopts.c                                       :+:      :+:    :+:   */
+/*   ft_opts.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 00:09:18 by giacomo           #+#    #+#             */
-/*   Updated: 2017/12/19 21:27:47 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/21 01:13:16 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int validate_required(t_opts *opts, void *data)
 	return (0);
 }
 
-int			ft_getopts(char **av, t_opts *opts, void *data, bool parse)
+int			ft_opts(char **av, t_opts *opts, void *data, bool parse)
 {
 	if (!av)
 		return (1);
@@ -52,6 +52,7 @@ int			ft_getopts(char **av, t_opts *opts, void *data, bool parse)
 		else
 			break ;
 	}
+	opts->argv = av;
 	av = (parse) ? av : g_argv;
 	((t_optparse *)data)->argv = av;
 	return (validate_required(opts));
