@@ -6,13 +6,14 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/12/19 20:05:31 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/12/23 21:25:03 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= libft.a
 
-DEBUG		:= 0
+# DEBUG		:= 0
+DEBUG		:= 1
 
 CC			?= gcc
 CFLAGS		+= -std=c99
@@ -76,9 +77,15 @@ ERR :=						\
 ft_perror					\
 ft_error_exit			\
 ft_usage
-FT_GETOPTS :=				\
-ft_getopts					\
-ftopts
+OPTS :=						\
+ft_opts_getlong				\
+ft_opts_getshort			\
+ft_opts_handle				\
+ft_opts_help				\
+ft_opts_parse				\
+ft_opts_suggest				\
+ft_opts_usage				\
+ft_opts
 HEAP :=						\
 ft_heap_singleton 			\
 ft_heap_clear 				\
@@ -215,7 +222,7 @@ $(addprefix chr/, $(CHR))									\
 $(addprefix darr/, $(DARR))									\
 $(addprefix dstr/, $(DSTR))									\
 $(addprefix err/, $(ERR))									\
-$(addprefix ft_getopts/, $(FT_GETOPTS))						\
+$(addprefix opts/, $(OPTS))									\
 $(addprefix ft_term/, $(FT_TERM))							\
 $(addprefix gnl/, $(GNL))									\
 $(addprefix heap/, $(HEAP))									\

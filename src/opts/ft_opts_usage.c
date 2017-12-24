@@ -6,36 +6,38 @@
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 21:30:42 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/12/21 00:57:45 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/23 21:25:41 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "opts.h"
+#include "libft.h"
 #include <unistd.h>
+#include <stdbool.h>
 
-int ft_opts_usage(t_opts *opts, t_opt *opt, bool name)
+int ft_opts_usage(t_optsdata *optsdata, t_opt *opt, char *name, char c)
 {
-	if (!opt)
+	if (!optsdata->usage)
+		return (1);
+	if (name)
 	{
-		if (name)
+		if (opt && opt->required)
+			ft_dprintf(STDERR_FILENO, "%s: requried option '--%s'\n",
+			optsdata->prog, opt->name);
+		else
 			ft_dprintf(STDERR_FILENO, "%s: unrecognized option '--%s'\n",
-			prog, opt->name);
+			optsdata->prog, name);
+	}
+	else if (c)
+	{
+		if (opt && opt->required)
+			ft_dprintf(STDERR_FILENO, "%s: requried option -- '%c'\n",
+			optsdata->prog, opt->c);
 		else
 			ft_dprintf(STDERR_FILENO, "%s: invalid option -- '%c'\n",
-			prog, opt->c);
-		if (opts->help)
-			ft_opts_suggest_help();
+			optsdata->prog, c);
 	}
-	else if (opt->requried)
-	{
-		if (name)
-			ft_dprintf(STDERR_FILENO, "%s: requried option '--%s'\n",
-			prog, opt->name);
-		else
-			ft_dprintf(STDERR_FILENO, "%s: requried option -- '%c'\n",
-			prog, opt->c);
-		if (opts->help)
-			ft_opts_suggest_help();
-	}
+	if (optsdata->help)
+		ft_opts_suggest(optsdata);
 	return (1);
 }

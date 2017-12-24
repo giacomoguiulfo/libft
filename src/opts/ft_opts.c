@@ -6,34 +6,40 @@
 /*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 00:09:18 by giacomo           #+#    #+#             */
-/*   Updated: 2017/12/21 01:13:16 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/12/23 13:27:34 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftopts.h"
 #include "opts.h"
 #include "libft.h"
+#include <stdbool.h>
 
-static int validate_required(t_opts *opts, void *data)
+static int	validate_required(t_optsdata *optsdata, void *data)
 {
 	int i;
 
-	if (!opts->required_opts)
+	if (!optsdata->required_opts)
 		return (0);
 	i = 0;
-	while (opts->opt_map[i])
+	while (optsdata->opt_map[i].c)
 	{
-		if (opts->opt_map[i].requried &&
-		!(data->flags & opts->opt_map[i].flags_on))
-			return ((usage) ? ft_opt_usage(opts, opts->opt_map[i]) : 1);
+		if (optsdata->opt_map[i].required &&
+			!(((t_optparser *)data)->flags & optsdata->opt_map[i].flags_on))
+		{
+			return (ft_opts_usage(optsdata, &optsdata->opt_map[i],
+					NULL, optsdata->opt_map[i].c));
+		}
+		i++;
 	}
 	return (0);
 }
 
-int			ft_opts(char **av, t_opts *opts, void *data, bool parse)
+int			ft_opts(char **av, t_optsdata *optsdata, void *data, bool parse)
 {
 	if (!av)
 		return (1);
+	if (!optsdata->prog)
+		optsdata->prog = *av;
 	av++;
 	while (av && *av)
 	{
@@ -41,19 +47,19 @@ int			ft_opts(char **av, t_opts *opts, void *data, bool parse)
 			break ;
 		if ((*av)[0] == '-' && (*av)[1] == '-')
 		{
-			if (ft_opt_long(&av, opts->opt_map, data))
+			if (ft_opts_long(&av, optsdata, data))
 				return (1);
 		}
 		else if ((*av)[0] == '-')
 		{
-			if (ft_opt_short(&av, opts->opt_map, data))
+			if (ft_opts_short(&av, optsdata, data))
 				return (1);
 		}
 		else
 			break ;
 	}
-	opts->argv = av;
+	optsdata->argv = av;
 	av = (parse) ? av : g_argv;
-	((t_optparse *)data)->argv = av;
-	return (validate_required(opts));
+	((t_optparser *)data)->argv = av;
+	return (validate_required(optsdata, data));
 }
