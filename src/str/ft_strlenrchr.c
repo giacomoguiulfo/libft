@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_heap_clear.c                                    :+:      :+:    :+:   */
+/*   ft_strlenrchr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/21 21:04:59 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/12/13 12:17:23 by giacomo          ###   ########.fr       */
+/*   Created: 2017/11/22 21:44:45 by gguiulfo          #+#    #+#             */
+/*   Updated: 2018/01/22 12:58:40 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "heap.h"
-#include <stdlib.h>
+#include <stddef.h>
 
-int		ft_heap_clear(void)
+size_t	ft_strlenrchr(char *str, char c)
 {
-	t_heap_man	*heap_man;
-	t_memnode	*memnode;
-	t_memnode	*next;
+	int i;
 
-	heap_man = ft_heap_singleton();
-	if (heap_man == NULL)
-		return (1);
-	memnode = heap_man->first;
-	while (memnode != NULL)
+	i = 0;
+	while (str[i])
+		i++;
+	while (i >= 0)
 	{
-		next = memnode->next;
-		free(memnode);
-		memnode = next;
+		if (str[i] == c)
+			return (i);
+		i--;
 	}
-	heap_man->first = NULL;
-	heap_man->last = NULL;
 	return (0);
 }

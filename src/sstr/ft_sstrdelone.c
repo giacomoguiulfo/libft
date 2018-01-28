@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hstrdup.c                                       :+:      :+:    :+:   */
+/*   ft_sstrdelone.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/13 12:19:48 by giacomo           #+#    #+#             */
-/*   Updated: 2017/12/13 12:25:51 by giacomo          ###   ########.fr       */
+/*   Created: 2017/11/25 01:35:21 by giacomo           #+#    #+#             */
+/*   Updated: 2017/12/07 13:42:41 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "heap.h"
-#include "libft.h"
-#include <stdlib.h>
+#include "str.h"
 
-char	*ft_hstrdup(char *hstr)
+void	ft_sstrdelone(char **sstr, int index)
 {
-	char	*ret;
-	size_t	size;
-	size_t	i;
+	int i;
 
-	if (!hstr)
-		return (NULL);
-	size = -1;
-	while (hstr[++size])
-		;
-	ret = (char*)ft_hmalloc(sizeof(char) * (size + 1));
-	ret[size] = '\0';
-	i = -1;
-	while (++i < size)
-		ret[i] = hstr[i];
-	return (ret);
+	ft_strdel(&sstr[index]);
+	i = index;
+	while (sstr[i] || i == index)
+	{
+		sstr[i] = sstr[i + 1];
+		i++;
+	}
 }

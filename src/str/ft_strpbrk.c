@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_heap_clear.c                                    :+:      :+:    :+:   */
+/*   ft_strpbrk.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/21 21:04:59 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/12/13 12:17:23 by giacomo          ###   ########.fr       */
+/*   Created: 2018/01/16 11:48:25 by gguiulfo          #+#    #+#             */
+/*   Updated: 2018/01/16 12:05:07 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "heap.h"
-#include <stdlib.h>
+#include <stddef.h>
 
-int		ft_heap_clear(void)
+char	*ft_strpbrk(const char *s, const char *charset)
 {
-	t_heap_man	*heap_man;
-	t_memnode	*memnode;
-	t_memnode	*next;
+	char	*c;
 
-	heap_man = ft_heap_singleton();
-	if (heap_man == NULL)
-		return (1);
-	memnode = heap_man->first;
-	while (memnode != NULL)
+	while (*s)
 	{
-		next = memnode->next;
-		free(memnode);
-		memnode = next;
+		c = (char *)charset;
+		while (*c)
+		{
+			if (*c == *s)
+				return ((char *)s);
+			c++;
+		}
+		s++;
 	}
-	heap_man->first = NULL;
-	heap_man->last = NULL;
-	return (0);
+	return (NULL);
 }

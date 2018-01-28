@@ -6,7 +6,7 @@
 /*   By: giacomo <giacomo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 00:11:15 by giacomo           #+#    #+#             */
-/*   Updated: 2017/12/25 20:37:27 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2018/01/11 16:42:01 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,7 @@ int					ft_opts_short(char ***av, t_optsdata *optsdata, void *data)
 	while (opt_name[++i])
 	{
 		opt_arg = NULL;
-		opt = ft_opts_getshort(optsdata->opt_map, opt_name[i]);
-		if (!opt)
+		if (!(opt = ft_opts_getshort(optsdata->opt_map, opt_name[i])))
 			return (ft_opts_usage(optsdata, opt, NULL, opt_name[i]));
 		load_flag(data, opt);
 		if (opt->getarg)
@@ -71,11 +70,10 @@ int					ft_opts_short(char ***av, t_optsdata *optsdata, void *data)
 				break ;
 		}
 	}
-	(*av)++;
-	return (0);
+	return ((*av)++ ? 0 : 0);
 }
 
-int				ft_opts_long(char ***av, t_optsdata *optsdata, void *data)
+int					ft_opts_long(char ***av, t_optsdata *optsdata, void *data)
 {
 	t_opt	*opt;
 	char	*opt_name;

@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_heap_clear.c                                    :+:      :+:    :+:   */
+/*   ft_unixcase.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/21 21:04:59 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/12/13 12:17:23 by giacomo          ###   ########.fr       */
+/*   Created: 2017/11/22 21:33:34 by gguiulfo          #+#    #+#             */
+/*   Updated: 2018/01/12 14:26:22 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "heap.h"
-#include <stdlib.h>
+#include "chr.h"
+#include <stddef.h>
 
-int		ft_heap_clear(void)
+int	ft_unixcase(const char *str)
 {
-	t_heap_man	*heap_man;
-	t_memnode	*memnode;
-	t_memnode	*next;
+	size_t i;
 
-	heap_man = ft_heap_singleton();
-	if (heap_man == NULL)
-		return (1);
-	memnode = heap_man->first;
-	while (memnode != NULL)
+	if (!str || !str[0] || (!ft_isalpha(str[0]) && str[0] != '_' &&
+																str[0] != '/'))
+		return (0);
+	i = 1;
+	while (str[i])
 	{
-		next = memnode->next;
-		free(memnode);
-		memnode = next;
+		if (!ft_isalnum(str[i]) && str[i] != '_' && str[i] != '/')
+			return (0);
+		i++;
 	}
-	heap_man->first = NULL;
-	heap_man->last = NULL;
-	return (0);
+	return (1);
 }

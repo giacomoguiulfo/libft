@@ -6,7 +6,7 @@
 #    By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 11:36:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/12/23 21:25:03 by gguiulfo         ###   ########.fr        #
+#    Updated: 2018/01/22 12:15:51 by gguiulfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -167,26 +167,13 @@ ft_pow 						\
 ft_sqrtf
 SSTR :=						\
 ft_sstrdel					\
+ft_sstrdelone				\
 ft_sstrdup					\
+ft_sstrlen					\
 ft_sstrpush					\
 ft_sstrputs
 STR :=						\
 ft_basename					\
-ft_strcat 					\
-ft_strchr 					\
-ft_strcmp 					\
-ft_strcpy 					\
-ft_strdup 					\
-ft_strlcat 					\
-ft_strlen 					\
-ft_strlenchr				\
-ft_strncat 					\
-ft_strncmp 					\
-ft_strncpy 					\
-ft_strndup 					\
-ft_strnstr 					\
-ft_strrchr 					\
-ft_strstr					\
 ft_countwords 				\
 ft_findchr 					\
 ft_free_sstr 				\
@@ -196,24 +183,43 @@ ft_putendl 					\
 ft_putstr_fd 				\
 ft_putstr 					\
 ft_str_tolower				\
+ft_strcat 					\
+ft_strchr 					\
 ft_strclr					\
+ft_strcmp 					\
+ft_strcpy 					\
 ft_strdel 					\
+ft_strdup 					\
 ft_strequ 					\
 ft_stris					\
 ft_striter 					\
 ft_striteri 				\
 ft_strjoin 					\
+ft_strlcat 					\
+ft_strlen 					\
+ft_strlenchr				\
+ft_strlenrchr				\
 ft_strmap 					\
 ft_strmapi 					\
+ft_strncat 					\
+ft_strncmp 					\
+ft_strncpy 					\
+ft_strndup 					\
 ft_strnequ 					\
 ft_strnew 					\
+ft_strnstr 					\
+ft_strpbrk					\
+ft_strrchr 					\
 ft_strrev 					\
+ft_strsep					\
 ft_strsplit 				\
+ft_strstr					\
 ft_strsub 					\
 ft_strtrim
 SYS :=						\
 ft_getenv					\
-ft_isdir
+ft_isdir					\
+ft_unixcase
 
 SRC_BASE	:=												\
 $(addprefix arr/, $(ARR))									\

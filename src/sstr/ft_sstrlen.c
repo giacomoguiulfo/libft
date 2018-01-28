@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_heap_clear.c                                    :+:      :+:    :+:   */
+/*   ft_sstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguiulfo <gguiulfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/21 21:04:59 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/12/13 12:17:23 by giacomo          ###   ########.fr       */
+/*   Created: 2017/11/22 21:33:34 by gguiulfo          #+#    #+#             */
+/*   Updated: 2017/12/07 13:33:15 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "heap.h"
-#include <stdlib.h>
+#include <stddef.h>
 
-int		ft_heap_clear(void)
+size_t	ft_sstrlen(char *const sstr[])
 {
-	t_heap_man	*heap_man;
-	t_memnode	*memnode;
-	t_memnode	*next;
+	size_t i;
 
-	heap_man = ft_heap_singleton();
-	if (heap_man == NULL)
-		return (1);
-	memnode = heap_man->first;
-	while (memnode != NULL)
-	{
-		next = memnode->next;
-		free(memnode);
-		memnode = next;
-	}
-	heap_man->first = NULL;
-	heap_man->last = NULL;
-	return (0);
+	i = 0;
+	while (sstr[i])
+		i++;
+	return (i);
 }
